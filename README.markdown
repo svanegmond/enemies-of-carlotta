@@ -20,7 +20,7 @@ willing to live without having headers encoded with MIME, Python 2.1 or
 2.2 should also work.
 
 To **install**, edit Makefile, set the variables `bindir` and `man1dir`,
-and then run s`"make install` as root.  It is also available via
+and then run `make install` as root.  It is also available via
 `apt-get` in Debian and Ubuntu.
 
 Enemies of Carlotta is licensed using the GNU General Public License,
