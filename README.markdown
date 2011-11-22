@@ -14,13 +14,13 @@ the mails EoC sends are sent in that language. Language is chosen
 for each list separately. More translations are warmly welcome.
 
 
-*Requirements*: You need Python 2.3 or newer, and lockfile (from procmail). If you are
+**Requirements**: You need Python 2.3 or newer, and lockfile (from procmail). If you are
 willing to live without having headers encoded with MIME, Python 2.1 or
 2.2 should also work.
 
-To *install*, edit Makefile, set the variables bindir and man1dir, and
-then run "make install" as root.  It is also available via apt-get
-in Debian and Ubuntu.
+To **install**, edit Makefile, set the variables `bindir` and `man1dir`,
+and then run s`"make install` as root.  It is also available via
+`apt-get` in Debian and Ubuntu.
 
 Enemies of Carlotta is licensed using the GNU General Public License,
 version 2.
@@ -33,9 +33,9 @@ About the name
 
 The name _Enemies of Carlotta_ comes from the movie _Dead Men
 Don't Wear Plaid_, with Steve Martin in the lead role. It is a
-comedy and a tribute to the old detective of the black-and-white
+comedy and a tribute to the old detective movies of the black-and-white
 era. As part of the plot, someone makes lists of people that are
-the friends or enemies of _Carlotta_, where _Carlotta_ is an island
+the friends or enemies of Carlotta, where _Carlotta_ is an island
 where the bad guys are. _Enemies of Carlotta_ are therefore the
 good guys.
 
