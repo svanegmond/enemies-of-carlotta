@@ -1,0 +1,40 @@
+From: %(From)s
+To: %(To)s
+Subject: Votre courriel ne peut être délivré, %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Bonjour, 
+
+Vous êtes abonné à la liste de diffusion %(list)s .
+
+Les courriels qui vous ont été envoyés par le gestionnaire
+de la liste de diffusion ne sont jamais arrivés à destination. 
+Ce phénomène s'est produit au moins une fois depuis la semaine dernière.
+S'il s'agit d'une erreur temporaire, vous pouvez ignorer ce message 
+d'avertissement. Cependant, si les échecs se reproduisent, il se peut
+que vous soyez automatiquement désabonné de la liste de diffusion. Nous
+en sommes désolé.
+
+Le premier message qui n'a pu être délivré est cité ci-dessous.
+
+Pour obtenir des informations sur l'utilisation du logiciel de gestion de
+la liste de diffusion, envoyez un courriel à %(local)s-help@%(domain)s .
+
+Si vous rencontrez des problèmes, veuillez prendre contact avec la
+personne responsable de la liste de diffusion à l'adresse :
+%(local)s-owner@%(domain)s .
+
+Merci.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=bounce.txt
+
+%(bounce)s--%(boundary)s--
+

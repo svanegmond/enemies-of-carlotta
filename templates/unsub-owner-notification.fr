@@ -1,0 +1,23 @@
+From: %(From)s
+To: %(To)s
+Subject: Adresse supprimée sur %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Bonjour, 
+
+Ce courriel a été envoyé par le gestionnaire de la liste de diffusion
+
+    %(list)s
+
+aux personnes qui sont responsables de la liste.
+
+L'adresse suivante s'est désabonnée d'elle-même de la liste :
+
+    %(address)s
+
+À moins que quelque chose de particulier vous semble suspect, ce message
+vous est uniquement envoyé à titre informatif et ne nécessite pas
+traitement particulier.
+
+Merci.

@@ -1,0 +1,8 @@
+From: %(From)s
+To: %(To)s
+Subject: Kein Zugriff auf Abonnentenliste der Liste %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Da Sie nicht Verwalter der Liste %(list)s sind können
+Sie die Abonnentenliste nicht einsehen.

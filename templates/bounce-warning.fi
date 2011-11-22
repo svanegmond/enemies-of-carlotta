@@ -1,0 +1,32 @@
+From: %(From)s
+To: %(To)s
+Subject: Postisi aiheuttaa virheilmoituksia, %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Olet tilaajana listalla %(list)s .
+
+Sinulle lähetetty sähköposti on aiheuttanut ainakin yhden virheilmoituksen
+viimeisen viikon aikana. Jos tämä oli tilapäinen ongelma, voit unohtaa
+koko asian. Jos virheet kuitenkin jatkuvat, sinut poistetaan lopulta
+listalta. Valitamme.
+
+Ensimmäinen virheilmoitus on tämän viestin liitteenä.
+
+Postituslistaohjelmiston käyttöohjeet saa pyytämällä osoitteesta
+%(local)s-help@%(domain)s .
+
+Listan omistajat saat kiinni osoitteesta
+%(local)s-owner@%(domain)s .
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=bounce.txt
+
+%(bounce)s--%(boundary)s--
+

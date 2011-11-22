@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sed 's:^TEMPLATE_DIRS *=.*:TEMPLATE_DIRS = ["'$1'"]:' |
+sed 's:^DOTDIR *=.*:DOTDIR = os.path.expanduser("~/.enemies-of-carlotta"):'

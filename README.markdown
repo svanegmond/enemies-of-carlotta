@@ -2,11 +2,12 @@ Enemies of Carlotta
 ===================
 
 Enemies of Carlotta is a simple mailing list manager. It tries to
-mimick the ezmlm software somewhat, but is written completely from
-scratch, in Python. The original author decided he didn't want to
+mimic the ezmlm software somewhat, but is written completely from
+scratch in Python. The original author decided he didn't want to
 live with the QMail and ezmlm licenses, and couldn't find something
-small and simple to replace them. If you can't stand to use Mailman,
-this is the list manager for you.
+small and simple to replace them. 
+
+If you can't stand to use Mailman, this is the list manager for you.
 
 EoC supports English, Finnish, French, Spanish, and Swedish. Other
 languages are trivial to add. Support for a language means that all
@@ -31,13 +32,12 @@ communally here at Github.
 About the name
 --------------
 
-The name _Enemies of Carlotta_ comes from the movie _Dead Men
-Don't Wear Plaid_, with Steve Martin in the lead role. It is a
-comedy and a tribute to the old detective movies of the black-and-white
-era. As part of the plot, someone makes lists of people that are
-the friends or enemies of Carlotta, where _Carlotta_ is an island
-where the bad guys are. _Enemies of Carlotta_ are therefore the
-good guys.
+The name _Enemies of Carlotta_ comes from the movie _Dead Men Don't
+Wear Plaid_, with Steve Martin in the lead role. It is a comedy and
+a tribute to the old detective movies of the black-and-white era.
+As part of the plot, someone makes lists of people that are the
+friends or enemies of Carlotta, where Carlotta is an island where
+the bad guys are. Enemies of Carlotta are therefore the good guys.
 
 The option `--cleaning-woman` also comes from the movie. The main
 character goes berserk at the mention of those words and that is

@@ -1,0 +1,38 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Moderation auf der Liste %(list)s erbeten
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Hallo, 
+
+Diese E-Mail wurde von der Listen-Software der Liste
+
+    %(list)s
+
+an die Verwalter der Liste gesendet.
+
+Soll die angehängte Nachricht an die Liste versendet werden?
+Falls ja, so antworten Sie bitte auf diese E-Mail oder senden
+eine Bestätigung an
+
+    %(confirm)s.
+
+Falls nein, senden Sie bitte ein Nachricht an
+
+    %(deny)s.
+
+Vielen Dank.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+
+%(origmail)s--%(boundary)s--
+

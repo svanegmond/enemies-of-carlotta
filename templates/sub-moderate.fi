@@ -1,0 +1,36 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Käsittele tilauspyyntö: %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Tämän viestin on lähettänyt postituslistaa
+
+    %(list)s
+
+käsittelevä ohjelmisto listan omistajille.
+
+Pitäisikö seuraava osoite lisätä tilaajalistalle?
+
+    %(subscriber)s
+
+Jos pitäisi, vastaa tähän viestiin tai lähetä viesti osoitteeseen
+
+    %(confirm)s
+
+Jos ei pitäisi, lähetä viesti osoitteeseen
+
+    %(deny)s
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+ 
+%(origmail)s--%(boundary)s--
+

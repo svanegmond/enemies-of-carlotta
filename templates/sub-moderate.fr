@@ -1,0 +1,41 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Veuillez modérer l'abonnement à %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Bonjour,
+
+Ce courriel a été envoyé par le gestionnaire de la liste de diffusion
+
+    %(list)s
+
+aux personnes qui sont responsables de la liste.
+
+L'adresse suivante doit-elle être autorisée à s'abonner à la liste ?
+
+    %(subscriber)s
+
+Si oui, répondez à ce courriel ou envoyez un message à
+
+    %(confirm)s
+
+Si vous souhaitez rejeter l'abonnement, envoyez un message à
+
+    %(deny)s
+
+
+Merci.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+ 
+%(origmail)s--%(boundary)s--
+

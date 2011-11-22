@@ -1,0 +1,15 @@
+From: %(From)s
+To: %(To)s
+Subject: Goodbye from %(list)s
+Content-type: text/plain; charset=us-ascii
+MIME-Version: 1.0
+
+Goodbye from the %(list)s mailing list.
+
+For instructions on using the mailing list manager software, send
+mail to %(local)s-help@%(domain)s .
+
+If you have problems, please contact the human owners of the list
+at %(local)s-owner@%(domain)s .
+
+Thank you.

@@ -1,0 +1,13 @@
+From: %(From)s
+To: %(To)s
+Subject: Näkemiin listalta %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Näkemiin postituslistalta %(list)s .
+
+Postituslistaohjelmiston käyttöohjeet saa pyytämällä osoitteesta
+%(local)s-help@%(domain)s .
+
+Listan omistajat saat kiinni osoitteesta
+%(local)s-owner@%(domain)s .

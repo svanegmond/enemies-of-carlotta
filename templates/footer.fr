@@ -1,0 +1,3 @@
+
+-- 
+Pour ne plus recevoir de message : mailto:%(local)s-unsubscribe@%(domain)s

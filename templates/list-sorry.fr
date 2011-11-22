@@ -1,0 +1,7 @@
+From: %(From)s
+To: %(To)s
+Subject: Impossible d'obtenir la liste des abonnés à %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Désolé, vous n'êtes pas le responsable de la liste %(list)s.

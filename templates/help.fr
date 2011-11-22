@@ -1,0 +1,42 @@
+From: %(From)s
+To: %(To)s
+Subject: Message d'aide de la liste de diffusion %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Bonjour, 
+
+Voici le message d'aide pour la liste de diffusion %(list)s.
+
+La liste fonctionne grâce au gestionnaire de liste de diffusion 
+« EoC ». Il est capable de traiter les commandes suivantes :
+
+    %(local)s-help@%(domain)s
+
+    	Envoie ce message d'aide.
+
+    %(local)s-subscribe@%(domain)s
+    
+    	Vous abonne à la liste. Vous recevrez une demande de 
+	confirmation.
+	
+    %(local)s-subscribe-foo=bar@%(domain)s
+    
+    	Abonne l'adresse foo@bar à la liste de diffusion. foo@bar
+	recevra une demande de confirmation.
+
+    %(local)s-unsubscribe@%(domain)s
+    
+    	Vous désabonne de la liste de diffusion. Vous recevrez une 
+	demande de confirmation.
+	
+    %(local)s-unsubscribe-foo=bar@%(domain)s
+    
+    	Désabonne l'adresse foo@bar de la liste de diffusion. foo@bar
+	recevra une demande de confirmation.
+
+Si vous rencontrez des problèmes qui ne sont pas traités dans ce message, 
+veuillez prendre contact avec la personne responsable de la liste de 
+diffusion à l'adresse : %(local)s-owner@%(domain)s.
+
+Merci.

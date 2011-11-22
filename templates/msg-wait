@@ -1,0 +1,25 @@
+From: %(From)s
+To: %(To)s
+Subject: Please wait for moderation to %(list)s
+Content-type: text/plain; charset=us-ascii
+MIME-Version: 1.0
+
+Hello, 
+
+This mail has been sent by the mailing list manager operating the
+%(list)s mailing list.
+
+You, or someone (perhaps a spammer) pretending to be you, has sent
+a message to the mailing list. If it wasn't you, please just ignore
+this message. If it was you, please read further.
+
+Your message to the list has been sent to the moderators for approval.
+This might take a while. Please be patient.
+
+For instructions on using the mailing list manager software, send
+mail to %(local)s-help@%(domain)s .
+
+If you have problems, please contact the human owners of the list
+at %(local)s-owner@%(domain)s .
+
+Thank you.

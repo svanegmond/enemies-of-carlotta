@@ -1,0 +1,42 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Bitte bestaetigen Sie die Adressenliste fuer %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Hallo, 
+
+Diese E-Mail wurde von der Listen-Software der Liste
+$(list)s versendet.
+
+Einer der Verwalter der Liste (oder jemand der vorgegeben hat ein
+Verwalter zu sein) hat darum gebeten die Abonnentenliste der Liste
+zu ändern. Die Anfrage (inklusive der neuen Abonnentenliste) ist
+an diese E-Mail angehängt. Falls Sie diese Änderung akzeptieren
+antworten Sie bitte auf diese Nachricht. Ansonsten ignorieren Sie
+sie bitte einfach.
+
+Beachten Sie dass die gesamte Abonnentenliste durch diese Änderung
+ersetzt wird, alle alten Abonennten werden gelöscht falls sie nicht
+auch auf der neuen Liste verzeichnet sind.
+
+Um eine Anleitung zur Benutzung der Listen-Software zu erhalten,
+senden Sie bitte eine E-Mail an %(local)s-help@%(domain)s.
+
+Falls Sie Hilfe benötigen, können Sie auch an den Verwalter
+der Liste unter %(local)s-owner@%(domain)s schreiben.
+
+Vielen Dank.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+
+%(origmail)s--%(boundary)s--
+

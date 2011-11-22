@@ -1,0 +1,19 @@
+From: %(From)s
+To: %(To)s
+Subject: Rejet de l'abonnement à %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Bonjour,
+
+Ce courriel vous a été envoyé par le gestionnaire de la liste de 
+diffusion %(list)s .
+    
+Vous avez demandé à vous abonner à la liste, mais le modérateur a
+rejet votre demande d'abonnement. Désolé.
+
+Si vous rencontrez des problèmes, veuillez prendre contact avec la
+personne responsable de la liste de diffusion à l'adresse :
+%(local)s-owner@%(domain)s .
+
+Merci.

@@ -1,0 +1,11 @@
+From: %(From)s
+To: %(To)s
+Subject: Tilaajaluettelo: %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Pyynnöstä luettelen listan %(list)s tilaajat.
+
+%(addresses)s
+
+Yhteensä %(count)s osoitetta.

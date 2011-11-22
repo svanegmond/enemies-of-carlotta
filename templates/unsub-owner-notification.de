@@ -1,0 +1,25 @@
+From: %(From)s
+To: %(To)s
+Subject: Eine Abonnentement der Liste %(list)s wurde gekuendigt
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Hallo, 
+
+Diese E-Mail wurde von der Listen-Software der Liste
+
+    %(list)s
+
+an die Verwalter der Liste gesendet.
+
+Die Person mit der Adresse
+
+    %(address)s
+
+wurde auf eigenen Wunsch von der Abonnentenliste entfernt.
+
+Falls keine Besonderheiten vorliegen dient diese E-Mail
+nur Ihrer Information und Sie brauchen nichts weiter zu
+unternehmen.
+
+Vielen Dank.

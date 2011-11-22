@@ -1,0 +1,38 @@
+From: %(From)s
+To: %(To)s
+Subject: E-Mail an Sie von %(list)s kann nicht ausgestellt werden
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Hallo, 
+
+Sie sind auf der Liste %(list)s angemeldet.
+
+E-Mail von der Liste konnte mindestens einmal in der letzten Woche
+nicht zugestellt werden. Falls nur ein temporärer Fehler vorlag
+können Sie diese E-Mail einfach ignorieren, falls andererseits
+weiterhin Zustellprobleme auftreten werden Sie automatisch aus der
+Liste entfernt werden. Bitte entschuldigen Sie die evtl. daraus
+entstehenden Unannehmlichkeiten.
+
+Die erste Zustell-Fehlermeldung ist angehängt.
+
+Um eine Anleitung zur Benutzung der Listen-Software zu erhalten,
+senden Sie bitte eine E-Mail an %(local)s-help@%(domain)s.
+
+Falls Sie Hilfe benötigen, können Sie auch an den Verwalter
+der Liste unter %(local)s-owner@%(domain)s schreiben.
+
+Vielen Dank.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=bounce.txt
+
+%(bounce)s--%(boundary)s--
+

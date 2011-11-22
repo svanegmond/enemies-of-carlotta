@@ -1,0 +1,35 @@
+From: %(From)s
+To: %(To)s
+Subject: Address removed from %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=us-ascii
+
+Hello, 
+
+This mail has been sent by the mailing list manager operating the 
+
+    %(list)s
+
+mailing list to the human owners of the list.
+
+The following address has been removed from the list due to bouncing:
+
+    %(address)s
+
+The bounce message is attached at the bottom of this mail. Unless there is
+something really strange going on, this mail is only for your information
+and you need take no action.
+
+Thanks.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=bounce.txt
+ 
+%(bounce)s--%(boundary)s--
+

@@ -1,0 +1,13 @@
+From: %(From)s
+To: %(To)s
+Subject: Tilaus evätty: %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Tämän viestin on lähettänyt postituslistaa %(list)s
+operoiva ohjelmisto.
+
+Yritit tilata listan, mutta listan omistajat eväsivät pyyntösi.
+
+Listan omistajat saat kiinni osoitteesta
+%(local)s-owner@%(domain)s .

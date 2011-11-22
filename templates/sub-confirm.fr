@@ -1,0 +1,48 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Veuillez confirmer votre abonnement à %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Bonjour,
+
+Ce courriel a été envoyé par le gestionnaire de la liste de diffusion
+de la liste de diffusion %(list)s .
+
+Quelqu'un vient de demander de vous abonner à cette liste de diffusion.
+Regardez le message qui se trouve à la fin. Si vous n'avez pas envoyez
+vous-même directement ce message, veuillez prendre contact avec 
+l'expéditeur de ce message ou bien avec l'administrateur pour demander
+des explications.
+
+En répondant à ce courriel, vous confirmerez que vous souhaitez vous
+abonner à cette liste. Le contenu du message n'a pas d'importance. 
+Typiquement, vous pouvez utiliser la fonction répondre de votre 
+logiciel de lecture des courriers électroniques. Vous pouvez également
+envoyer un courriel à l'adresse ci-dessous :
+
+    %(confirm)s
+
+Si vous ne souhaitez pas vous abonner, ignorez simplement ce courriel.
+
+Pour obtenir des informations sur l'utilisation du logiciel de gestion de
+la liste de diffusion, envoyez un courriel à %(local)s-help@%(domain)s 
+
+Si vous rencontrez des problèmes, veuillez prendre contact avec la
+personne responsable de la liste de diffusion à l'adresse :
+%(local)s-owner@%(domain)s .
+
+Merci.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+
+%(origmail)s--%(boundary)s--
+

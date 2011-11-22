@@ -1,0 +1,12 @@
+From: %(From)s
+To: %(To)s
+Subject: Abonnenten der Liste %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Wie angefordert erhalten Sie hiermit die Abonnentenliste
+der Liste %(list)s.
+
+%(addresses)s
+
+Insgesamt sind dies %(count)s Adressen.

@@ -1,0 +1,33 @@
+From: %(From)s
+To: %(To)s
+Subject: Bad address list for %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=us-ascii
+
+Hello, 
+
+This mail has been sent by the mailing list manager operating the
+%(list)s mailing list.
+
+The address list you sent was syntactically incorrect. You need to have
+exactly one address per line, and nothing else.
+
+For instructions on using the mailing list manager software, send
+mail to %(local)s-help@%(domain)s .
+
+If you have problems, please contact the human owners of the list
+at %(local)s-owner@%(domain)s .
+
+Thank you.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+
+%(origmail)s--%(boundary)s--
+

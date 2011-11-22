@@ -1,0 +1,35 @@
+From: %(From)s
+To: %(To)s
+Subject: Ohjeita listalle %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Tämä on postituslistan  %(list)s ohjeteksti.
+
+Listaa pyörittää postituslistaohjelmisto nimeltä EoC. Se ymmärtää
+seuraavat komento-osoitteet:
+
+    %(local)s-help@%(domain)s
+
+	Lähettää tämän ohjetekstin.
+
+    %(local)s-subscribe@%(domain)s
+    
+    	Tilauspyyntö. Vastauksena tulee vahvistuspyyntö.
+	
+    %(local)s-subscribe-foo=bar@%(domain)s
+    
+    	Tilauspyyntö siten, että listalle lisätään osoite foo@bar .
+	foo@bar saa myös vahvistuspyynnön.
+
+    %(local)s-unsubscribe@%(domain)s
+    
+    	Listalta poistumispyyntö. Tämäkin pitää vahvistaa.
+	
+    %(local)s-unsubscribe-foo=bar@%(domain)s
+    
+    	Pyyntö poistaa foo@bar listalta. foo@bar saa vahvistuspyynnön.
+
+Jos sinulla on ongelmia, jotka eivät ratkea tämän ohjetekstin avulla,
+voit kysyä apua listan omistajilta (jotka ovat ihmisiä) osoitteesta
+%(local)s-owner@%(domain)s.

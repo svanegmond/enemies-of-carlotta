@@ -1,0 +1,21 @@
+From: %(From)s
+To: %(To)s
+Subject: Your mail bounces, goodbye from %(list)s
+Content-type: text/plain; charset=us-ascii
+MIME-Version: 1.0
+
+Hello, 
+
+You have been a subscriber to the %(list)s mailing list.
+
+Unfortunately, mail sent to you by the mailing list manager has bounced
+so much that you have been automatically removed.  Once your mail problems
+are solved, feel free to re-subscribe.
+
+For instructions on using the mailing list manager software, send
+mail to %(local)s-help@%(domain)s .
+
+If you have problems, please contact the human owners of the list
+at %(local)s-owner@%(domain)s .
+
+Thank you.

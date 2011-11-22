@@ -1,0 +1,17 @@
+From: %(From)s
+To: %(To)s
+Subject: Postisi ei toimi, näkemiin listalta %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Olet ollut tilaajana %(list)s -listalla.
+
+Valitettavasti sinulle lähetetyt sähköpostit aiheuttavat virheilmoituksia
+siinä määrin, että sinut on nyt automaattisesti poistettu listalta. Kunhan
+sähköpostiongelmasi on korjattu, olet tervetullut takaisin tilaajaksi.
+
+Postituslistaohjelmiston käyttöohjeet saa pyytämällä osoitteesta
+%(local)s-help@%(domain)s .
+
+Listan omistajat saat kiinni osoitteesta
+%(local)s-owner@%(domain)s .

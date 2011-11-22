@@ -1,0 +1,16 @@
+#!/usr/bin/python
+#
+# This file works as the Enemies of Carlotta startup wrapper. The real
+# program is in eoc.py, stored in SHAREDIR (see below). It is large enough
+# that the time Python takes to parse and compile it to bytecode is
+# significant, therefore we use a very short wrapper (this file) and
+# install eoc.py in a way that allows it to be compiled, thus reducing
+# startup time.
+
+SHAREDIR="."
+
+import sys
+sys.path.insert(0, SHAREDIR)
+
+import eoc
+eoc.main(sys.argv[1:])

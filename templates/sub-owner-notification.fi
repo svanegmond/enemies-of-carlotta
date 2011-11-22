@@ -1,0 +1,18 @@
+From: %(From)s
+To: %(To)s
+Subject: Tilaaja lisätty: %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Tämän viestin on lähettänyt postituslistaa
+
+    %(list)s
+
+käsittelevä ohjelmisto listan omistajille.
+
+Seuraava osoite on lisätty listalle:
+
+    %(address)s
+
+Tämä tiedoksi teille. Teidän ei tarvitse tehdä mitään asialle, paitsi jos
+jotain oikein omituista on tapahtunut.

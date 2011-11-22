@@ -1,0 +1,41 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Bitte moderieren Sie eine Anmeldung an die Liste %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Hallo, 
+
+Diese E-Mail wurde von der Listen-Software der Liste
+
+    %(list)s
+
+an die Verwalter der Liste gesendet.
+
+Darf die folgende Adresse auf die Liste angemeldet werden?
+
+    %(subscriber)s
+
+Falls ja, antworten Sie bitte auf diese E-Mail oder senden
+Sie eine E-Mail an
+
+    %(confirm)s.
+
+Falls nicht, so senden Sie bitte eine E-Mail an
+
+    %(deny)s.
+
+Vielen Dank.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+ 
+%(origmail)s--%(boundary)s--
+

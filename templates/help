@@ -1,0 +1,39 @@
+From: %(From)s
+To: %(To)s
+Subject: Help for the %(list)s mailing list
+Content-type: text/plain; charset=us-ascii
+MIME-Version: 1.0
+
+Hello, 
+
+this is the help text for the %(list)s mailing list.
+
+The list is operated by the EoC mailing list manager. It understands
+the following command addresses:
+
+    %(local)s-help@%(domain)s
+
+    	Sends this help text.
+
+    %(local)s-subscribe@%(domain)s
+    
+    	Subscribe to the list. You will get a confirmation request.
+	
+    %(local)s-subscribe-foo=bar@%(domain)s
+    
+    	Subscribe the address foo@bar to the list. foo@bar will get the
+	confirmation request.
+
+    %(local)s-unsubscribe@%(domain)s
+    
+    	Unsubscribe from the list. You will get a confirmation request.
+	
+    %(local)s-unsubscribe-foo=bar@%(domain)s
+    
+    	Unsubscribe the address foo@bar from the list. foo@bar will get the
+	confirmation request.
+
+If you have problems that are not solved by this help text, please contact
+the human owner of the list at %(local)s-owner@%(domain)s.
+
+Thank you.

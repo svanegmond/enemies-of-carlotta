@@ -1,0 +1,12 @@
+From: %(From)s
+To: %(To)s
+Subject: Liste des abonnés pour la liste %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Voici la liste des abonnés à la liste de diffusion 
+%(list)s
+
+%(addresses)s
+
+Total: %(count)s adresses.

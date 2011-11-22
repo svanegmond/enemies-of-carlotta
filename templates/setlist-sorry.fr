@@ -1,0 +1,7 @@
+From: %(From)s
+To: %(To)s
+Subject: Vous ne pouvez pas définir la liste des abonnés pour %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Désolé, mais vous n'êtes pas l'un des propriétaires de la liste %(list)s.

@@ -1,0 +1,41 @@
+From: %(From)s
+To: %(To)s
+Subject: Hilfe zur Liste %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Hallo, 
+
+Dies ist die Hilfe zur Liste %(list)s.
+
+Diese Liste wird von der Listen-Software EoC betrieben. Sie reagiert auf
+die folgenden Befehlsadressen:
+
+    %(local)s-help@%(domain)s
+
+    	Diese Hilfe anfordern.
+
+    %(local)s-subscribe@%(domain)s
+    
+    	Die Liste abonnieren. Sie werden um eine Bestätigung gebeten.
+	
+    %(local)s-subscribe-foo=bar@%(domain)s
+    
+    	Die Liste unter der Adresse foo@bar abonnieren. Eine Bestätigung
+        wird von foo@bar erbeten.
+
+    %(local)s-unsubscribe@%(domain)s
+    
+    	Mitgliedschaft auf der Liste kündigen. Sie werden um eine
+    	Bestätigung gebeten.
+	
+    %(local)s-unsubscribe-foo=bar@%(domain)s
+    
+    	Mitgliedschaft von foo@bar kündigen. Eine Bestätigung wird
+    	von foo@bar erbeten.
+
+Falls Sie Probleme haben die nicht in dieser Hilfe beschrieben sind
+wenden Sie sich bitte an den Verwalter der Liste unter der Adresse
+%(local)s-owner@%(domain)s.
+
+Vielen Dank.

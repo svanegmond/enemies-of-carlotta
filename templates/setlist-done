@@ -1,0 +1,21 @@
+From: %(From)s
+To: %(To)s
+Subject: Subscriber list has been changed for %(list)s
+Content-type: text/plain; charset=us-ascii
+MIME-Version: 1.0
+
+Hello, 
+
+This mail has been sent by the mailing list manager operating the
+%(list)s mailing list.
+
+For your information: On request from a list owner, the subscriber list
+for the list has been replaced with a new one.
+
+For instructions on using the mailing list manager software, send
+mail to %(local)s-help@%(domain)s .
+
+If you have problems, please contact the human owners of the list
+at %(local)s-owner@%(domain)s .
+
+Thank you.

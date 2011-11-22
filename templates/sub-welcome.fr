@@ -1,0 +1,19 @@
+From: %(From)s
+To: %(To)s
+Subject: Bienvenue sur %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Bienvenue sur la liste de diffusion %(list)s .
+
+Si vous souhaitez vous désabonner, envoyez un courriel à 
+%(local)s-unsubscribe@%(domain)s.
+
+Pour obtenir des informations sur l'utilisation du logiciel de gestion de
+la liste de diffusion, envoyez un courriel à %(local)s-help@%(domain)s .
+
+Si vous rencontrez des problèmes, veuillez prendre contact avec la
+personne responsable de la liste de diffusion à l'adresse :
+%(local)s-owner@%(domain)s .
+
+Merci.

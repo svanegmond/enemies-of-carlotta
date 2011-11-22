@@ -1,0 +1,40 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Vahvista tilauspyyntö listalle %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Tämän viestin on lähettänyt postituslistaa %(list)s
+operoiva ohjelmisto.
+
+Joku on pyytänyt, että sinut lisätään listan tilaajaksi. Pyyntö on
+tämän viestin lopussa. Jos et lähettänyt sitä itse, ole hyvä ja kysy
+lähettäjältä tai heidän ylläpidoltaan mistä on kyse.
+
+Jos vastaat tähän viestiin, vahvistat, että haluat tilata listan.
+Vastausviestisi sisällöllä ei ole väliä. Vastaamisen pitäisi onnistua
+sähköpostiohjelmasi normaalilla vastaustoiminnolla. Vaihtoehtoisesti
+voit lähettää viestin tähän osoitteeseen:
+
+    %(confirm)s
+
+Jos et halua tilata listaa, sinun ei tarvitse tehdä mitään.
+
+Postituslistaohjelmiston käyttöohjeet saa pyytämällä osoitteesta
+%(local)s-help@%(domain)s .
+
+Listan omistajat saat kiinni osoitteesta
+%(local)s-owner@%(domain)s .
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+
+%(origmail)s--%(boundary)s--
+

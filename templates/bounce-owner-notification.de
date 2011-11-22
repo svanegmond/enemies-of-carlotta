@@ -1,0 +1,36 @@
+From: %(From)s
+To: %(To)s
+Subject: Eine Adresse wurde von %(list)s entfernt
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Hallo, 
+
+Diese E-Mail wurde von der Listen-Software der Liste
+
+    %(list)s
+
+an die Verwalter der Liste gesendet.
+
+Die folgende Adresse wurde von der Liste entfernt, da E-Mail an sie
+wiederholt nicht ausgestellt werden konnte:
+
+    %(address)s
+
+Die Fehlermeldung ist an diese E-Mail angehängt. Falls keine besonderen
+Vorkommnisse daraus zu erkennen sind dient diese E-Mail nur Ihrer
+Information und Sie brauchen nichts zu unternehmen.
+
+Vielen Dank.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=bounce.txt
+ 
+%(bounce)s--%(boundary)s--
+

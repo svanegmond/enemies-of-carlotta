@@ -1,0 +1,23 @@
+From: %(From)s
+To: %(To)s
+Subject: Bitte warten Sie auf Moderation Ihres Abonnements der Liste %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Hallo, 
+
+Diese E-Mail wurde von der Listen-Software der Liste
+$(list)s versendet.
+
+Sie haben bestätigt, dass Sie die Liste abonnieren möchten.
+Abonnement dieser List ist moderiert, daher muss der Verwalter
+der Liste erst zustimmen. Er wurde darum gebeten, dies kann
+aber eine Weile dauern.
+
+Um eine Anleitung zur Benutzung der Listen-Software zu erhalten,
+senden Sie bitte eine E-Mail an %(local)s-help@%(domain)s.
+
+Falls Sie Hilfe benötigen, können Sie auch an den Verwalter
+der Liste unter %(local)s-owner@%(domain)s schreiben.
+
+Vielen Dank.

@@ -1,0 +1,34 @@
+From: %(From)s
+To: %(To)s
+Subject: Fehlerhafte Adressenliste (%(list)s)
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Hallo, 
+
+Diese E-Mail wurde von der Listen-Software der Liste
+$(list)s versendet.
+
+Die Adressenliste die Sie gesendet haben war leider nicht
+lesbar. Sie müssen genau eine Adresse und nichts anderes
+pro Zeile angeben.
+
+Um eine Anleitung zur Benutzung der Listen-Software zu erhalten,
+senden Sie bitte eine E-Mail an %(local)s-help@%(domain)s.
+
+Falls Sie Hilfe benötigen, können Sie auch an den Verwalter
+der Liste unter %(local)s-owner@%(domain)s schreiben.
+
+Vielen Dank.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+
+%(origmail)s--%(boundary)s--
+

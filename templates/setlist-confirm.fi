@@ -1,0 +1,34 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Varmista tilaajaluettelon muutos listalle %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Tämän viestin on lähettänyt postituslistaa %(list)s
+operoiva ohjelmisto.
+
+Listan omistaja (tai sellaisena esiintyvä) on pyytänyt tilaajalistaa
+vaihdettavaksi liitteenä olevan meilin mukaiseksi. Jos hyväksyt tämän
+muutokset, vastaa tähän meiliin. Muuten jätä se huomiotta.
+
+Huomaa, että koko tilaajalista vaihtuu alla olevan listan mukaiseksi.
+Listalla jo olevat osoitteet unohdetaan, jos niitä ei ole alla.
+
+Postituslistaohjelmiston käyttöohjeet saa pyytämällä osoitteesta
+%(local)s-help@%(domain)s .
+
+Listan omistajat saat kiinni osoitteesta
+%(local)s-owner@%(domain)s .
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+
+%(origmail)s--%(boundary)s--
+

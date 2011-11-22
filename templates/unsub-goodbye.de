@@ -1,0 +1,16 @@
+From: %(From)s
+To: %(To)s
+Subject: Auf Wiedersehen von %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Ihr Abonnement der Liste %(list)s wurde entfernt. Auf
+Wiedersehen.
+
+Um eine Anleitung zur Benutzung der Listen-Software zu erhalten,
+senden Sie bitte eine E-Mail an %(local)s-help@%(domain)s.
+
+Falls Sie Hilfe benötigen, können Sie auch an den Verwalter
+der Liste unter %(local)s-owner@%(domain)s schreiben.
+
+Vielen Dank.

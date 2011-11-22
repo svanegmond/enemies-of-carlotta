@@ -1,0 +1,24 @@
+From: %(From)s
+To: %(To)s
+Subject: Veuillez attendre la modération pour %(list)s 
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Bonjour,
+
+Ce courriel a été envoyé par le gestionnaire de la liste de diffusion
+%(list)s .
+
+Vous avez confirmé que vous souhaitiez vous abonner à la liste. 
+L'inscription à la liste est malgré tout modérée, et le propriétaire
+de la liste devra manuellement accepter votre requête. Cela peut prendre
+un certain temps. Soyez patient.
+
+Pour obtenir des informations sur l'utilisation du logiciel de gestion de
+la liste de diffusion, envoyez un courriel à %(local)s-help@%(domain)s .
+
+Si vous rencontrez des problèmes, veuillez prendre contact avec la
+personne responsable de la liste de diffusion à l'adresse :
+%(local)s-owner@%(domain)s .
+
+Merci.

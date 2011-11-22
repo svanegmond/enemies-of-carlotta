@@ -1,0 +1,7 @@
+From: %(From)s
+To: %(To)s
+Subject: Et voi vaihtaa tilaajalistaa listalle %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Et ole listan %(list)s omistaja.

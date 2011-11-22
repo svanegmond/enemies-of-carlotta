@@ -1,0 +1,19 @@
+From: %(From)s
+To: %(To)s
+Subject: Abonnement der Liste %(list)s verweigert
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Hallo, 
+
+Diese E-Mail wurde von der Listen-Software der Liste
+$(list)s versendet.
+
+Sie haben versucht die Liste zu abonnieren, aber der
+Verwalter der Liste hat Ihr Abonnement verweigert.
+Entschuldigung.
+
+Falls Sie Hilfe benötigen, können Sie an den Verwalter
+der Liste unter %(local)s-owner@%(domain)s schreiben.
+
+Vielen Dank.

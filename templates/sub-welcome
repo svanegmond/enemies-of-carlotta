@@ -1,0 +1,18 @@
+From: %(From)s
+To: %(To)s
+Subject: Welcome to %(list)s
+Content-type: text/plain; charset=us-ascii
+MIME-Version: 1.0
+
+Welcome to the %(list)s mailing list.
+
+If you wish to unsubscribe, send mail to 
+%(local)s-unsubscribe@%(domain)s .
+
+For instructions on using the mailing list manager software, send
+mail to %(local)s-help@%(domain)s .
+
+If you have problems, please contact the human owners of the list
+at %(local)s-owner@%(domain)s .
+
+Thank you.

@@ -1,0 +1,720 @@
+2005-12-03  Lars Wirzenius  <liw@iki.fi>
+
+	* I'm switching EoC development to bzr and using commit messages
+	instead of a Changelog. This is the last ChangeLog entry.
+
+2005-12-03  Lars Wirzenius  <liw@iki.fi>
+
+	* enemies-of-carlotta.1: Changed - to \- since that is more
+	correct. Added the missing word "pipe" in the description
+	of --moderate. Added note about + vs - in the Postfix regexp
+	example. Documented --show-lists.
+	
+	* eoc.py: Don't append a footer if the message is base64 encoded.
+
+2005-04-16  Lars Wirzenius  <liw@iki.fi>
+
+	* templates/*: Changed content dispositions from attachment to
+	  inline so that they are shown by default in mailers.
+
+2005-04-16  Lars Wirzenius  <liw@iki.fi>
+
+	* templates/bounce-owner-notification, templates/bounce-warning,
+	  templates/setlist-confirm: Say "attached" instead of "appended"
+	  or "below".
+
+2005-04-16  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py: nice_7bit: Don't treat white space characters as
+          requiring MIME encoding.
+
+2005-04-10  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release version 1.1.5.
+
+2005-04-10  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py, templates/help*: Use "EoC" instead of "Enemies of
+        Carlotta" so as not to scare off users who don't get the movie
+        reference. Did not change filenames, since those are only
+        visible to the listmaster and the listmaster presumably can read
+        the home page.
+
+2005-04-10  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Cleaning woman now removes groups without subscribers.
+	They can happen when we add a subscriber to a list when they are
+	there already and were the only member in their group.
+
+2005-04-10  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py, eocTests.py, enemies-of-carlotta.1: Added option 
+	"pristine-headers" to disable header MIME encoding.
+
+2005-04-10  Lars Wirzenius  <liw@iki.fi>
+
+        * enemies-of-carlotta.1, eoc.py, eocTests.py,
+          templates/msg-moderate: Applied patches from Pascal Hakim
+          to implement post moderators separately from list owners.
+          If there are no moderators, the list owners are also moderators.
+
+2005-04-10  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py, eocTest.py, enemies-of-carlotta.1: Applied patch from
+	Jaakko Niemi to implement a feature to optionally ignore bounces.
+
+2005-04-10  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py, eocTests.py: Fixes for treating addresses in a
+	case in-sensitive manner (but storing in the form that the
+	user gave).
+
+2005-04-10  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Don't log debug() to stderr. Log info() and error() first
+	to file, and to stderr only after that. This should avoid problems
+	when MTA's buffer for our stderr output fills up.
+
+2005-04-10  Lars Wirzenius  <liw@iki.fi>
+
+        * templates/sub-owner-notification.fi,
+          templates/unsub-owner-notification.fi: Added the missing word
+          "tehdä". Pointed out by Leena Romppainen.
+
+2005-04-10  Lars Wirzenius  <liw@iki.fi>
+
+        * Makefile: Installation improvements. Added a mandir variable
+        and made man1dir, man1dires, and man1dirfr dependent on it. This
+        allows the manual dirs to easily be relocated. Also added a
+        command variable to allow renaming of the command in bindir.
+
+2004-12-06  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release version 1.1.4.
+
+2004-12-06  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Introduced locking of individual messages to MessageBox.
+	Used this to prevent more than one request for post approval
+	processing from happening at the same time. This should fix the
+	problem found by Pascal Hakim, where several moderators are so
+	fast to reply to a moderation request that the list gets two or
+	more copies of the same message.
+
+2004-12-06  Lars Wirzenius  <liw@iki.fi>
+
+	* TODO: Added.
+
+2004-12-05  Lars Wirzenius  <liw@iki.fi>
+
+	* enemies-of-carlotta.1.es: Updated Spanish manual page from
+	Ricardo Javier Cardenes.
+
+2004-12-04  Lars Wirzenius  <liw@iki.fi>
+
+	* README.CVS: Wrote.
+
+2004-11-27  Lars Wirzenius  <liw@iki.fi>
+
+        * Making release version 1.1.3.
+
+2004-11-27  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py: If email.Header module is missing, then work as otherwise,
+        but don't MIME encode headers. This should restore the ability to
+        run on Python 2.1 and 2.2.
+        
+        * README: Noted.
+
+2004-11-27  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py: --show-lists now alphabetizes the output.
+
+2004-11-27  Lars Wirzenius  <liw@iki.fi>
+
+        * templates/bounce-probe*, templates/sub-already*,
+          templates/unsub-already*: Unused, removed.
+
+2004-11-27  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py: Added the beginnings of a plugin feature. The only hook
+        for now is "send_mail_to_subscribers_hook" which allows the plugin
+        to manipulate the mail before it is sent to the subscribers.
+        
+        * eoc.py: Added --no-act option to make testing easier.
+        
+        * enemies-of-carlotta.1: Documented the plugins.
+
+2004-11-27  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py: Made it so that an empty template means the mail is not
+        sent at all. This can be used to prevent, say, "please wait for
+        moderation" messages from being sent on a per-list basis.
+        
+        * enemies-of-carlotta.1: Documented this.
+
+2004-11-27  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py: Added --version option.
+
+2004-11-27  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py: Allow setting of more list options with --create or
+        --edit: added new options --language, --mail-on-forced-unsubscribe,
+        --mail-on-subscription-changes.
+        
+        * enemies-of-carlotta.1: Documented them.
+
+2004-11-27  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py: Added command line options --get and --set.
+        
+        * enemies-of-carlotta.1: Documented them.
+        
+2004-11-27  Lars Wirzenius  <liw@iki.fi>
+
+        * eocTests.py: Added a test to check that the headers of sent
+        mails are only 7-bit ASCII characters (tab, newline, carriage
+        return, plus 32-126).
+        
+        * eoc.py: Encode outgoing mails to use only 7-bit characters in
+        the headers. This is required for the mails to work correctly
+        with MIME compliant mail readers. Note that this change makes
+        use of the email.Header module in Python 2.3, so with this change
+        the minimum supported Python version is 2.3.
+        
+        * README: Noted Python version requirement change.
+
+2004-09-18  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release version 1.1.2.
+
+2004-09-18  Lars Wirzenius  <liw@iki.fi>
+
+        * enemies-of-carlotta.1.es: Added manual page translation to
+        Spanish by Ivan Juanes. Nobody expectes the Spanish manual
+        page.
+	
+	* Makefile: Install the Spanish manual page.
+
+2004-09-18  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py, templates/*: Implemented suggestion from Magnus Holmgren
+	to make attached messages real MIME attachments rather than 
+	just inserting the raw message code into a text/plain message.
+	Also converted all templates to UTF-8, since that makes it 
+	easier to edit them for me. Hopefully nothing broke.
+
+2004-09-18  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: When an EoC exception occurs, print out a sensible
+	error message about it rather than letting Python print out
+	a stack trace.
+
+2004-09-18  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py, eocTests.py, enemies-of-carlotta.1: Added support for
+        adding headers to and removing headers from mails sent to the
+        list. See the files headers-to-add and headers-to-remove in the
+        list directories.
+
+2004-09-12  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py, eocTest.py: Added support for $listdir/headers-to-add
+	(but it still needs to be documented).
+
+2004-09-03  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py, eocTest.py: Some refactoring and new unit tests.
+
+2004-08-28  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release version 1.1.1. This release is dedicated to Jaakko
+	Niemi, the winner of the bug finding competition for 1.1.0.
+
+2004-08-28  Lars Wirzenius  <liw@iki.fi>
+
+	* enemies-of-carlotta.1: Added note about the "templates" directory
+	in the list specific directory using a patch sent by Jaakko Niemi,
+	who thereby won the bug finding competition.
+
+2004-08-26  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: in AddressParser, return the canonical name of the list,
+	instead of converting it to lower case. Also, when opening a list,
+	open using the canonical name rather than one converted to lower
+	case or derived from the incoming mail address. Thanks to Jaakko
+	Niemi for pointing these problems out.
+	
+	* eocTests.py: Improved testing cases when the name of a list is
+	not all lower case.
+
+2004-08-26  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py, eocTests.py: Bugfix for bug found by Jaakko Niemi.
+	If the list has been created with a name containing upper case,
+	--is-list won't work. Fixed by making AddressParser convert
+	all list names it gets to lower case.
+
+	* Makefile: Bugfix for bug found by Jaakko Niemi. Used bashism in
+	the install target, which made install not work under dash and
+	other shells. Fixed by manually expanding a {foo,bar} construct.
+	
+	* Makefile: Bugfix for bug found by Jaakko Niemi. qmqp.py was not
+	installed by "make install". Oops.
+
+2004-08-24  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Changed md5sum_as_hex to use .hexdigest() instead of
+	doing the hex conversion manually. I should read more manuals.
+	Thanks to Magnus Holmgren for pointing this out.
+
+2004-08-23  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release version 1.1.0.
+
+2004-07-25  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py: Added a realname for the From line in message
+        templates. This is meant to avoid some spam filters.
+
+2004-07-25  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py, eocTests.py: Refactoring. Moved address parsing into
+        its own class, for simplicity, and started work on making EoC
+        specific exceptions be more user friendly as far as error
+        messages are concerned.
+
+2004-07-25  Lars Wirzenius  <liw@iki.fi>
+
+        * eocTests.py: Added some test cases for recipient address
+          parsing.
+
+2004-07-09  Lars Wirzenius  <liw@iki.fi>
+
+        * eoc.py: Refactoring changes to make code nicer. No functional
+        changes.
+
+2004-07-09  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Removed a bunch of documentation from the beginning of
+	the file. It was never finished, and was partly outdated, and it's
+	better put in README anyway, when I have a moment to flesh it out.
+	
+	* eocTests.py: Simplified (shortened) the implementation of a test
+	case in the anticipation of adding more cases to it.
+
+2004-03-31  Lars Wirzenius  <liw@iki.fi>
+
+        * templates/*.sv: Added Swedish translation from Magnus Holmgren.
+
+2004-02-21  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Use the rejection address for subscription and posting
+	moderation requests. This is to make it easier for mutt users
+	to mail to the rejection address: they can just answer "no"
+	to the question about using Reply-To. Thanks to Antti-Juhani
+	Kaijanaho for pointing this out.
+
+2004-02-21  Lars Wirzenius  <liw@iki.fi>
+
+	* enemies-of-carlotta.1: Updated.
+	
+	* eoc.py: Added --sender and --recipient options on suggestion
+	from Tommi Virtanen.
+
+2004-02-21  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Convert addresses to lower case so that random
+	capitalizations (especially in domain names) don't break things
+	for us.
+
+2004-02-21  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Added some safeguards against subscribing addresses
+	without @ characters.
+
+2004-02-21  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Catch GetoptError exception and print an error message.
+	This is nicer for the user than the stack trace.
+
+2004-02-21  Lars Wirzenius  <liw@iki.fi>
+
+	* qmqp.py: Added QMQP sending module by Jaakko Niemi. Thanks!
+	Did change encoding of single recipient so that Postfix will
+	accept that.
+	
+	* eoc.py: Changes to allow use of QMQP. Also, when logging a
+	sent mail, do it with a bit more white space so that it will be
+	easier to read the log file.
+
+2004-01-13  Lars Wirzenius  <liw@iki.fi>
+
+	* enemies-of-carlotta.1: Removed the word "also" from the
+	description of where subscription confirmation requests are
+	sent, since it was incorrect. Also added a suggestion that
+	--cleaning-woman should be run once per hour.
+	
+	* Makefile: Added patch from Jacek Konieczny to add DESTDIR
+	support.
+
+2003-09-07  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release version 1.0.3.
+
+2003-09-07  Lars Wirzenius  <liw@iki.fi>
+
+	* enemies-of-carlotta.1: Removed erroneous quotation marks in
+	the Qmail section. Added section documenting all mail commands.
+
+2003-09-06  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Bugfix. log_file() was broken in that it would replace
+	an already open output stream with one writing to /dev/null.
+	Fixed that. Also, not writing to /dev/null anymore in cases where
+	DOTDIR doesn't exist, but rather using a special purpose output
+	file stream simulator DevNull.
+
+2003-07-16  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py, eocTests.py, enemies-of-carlotta.1: Added command line
+	option --post for bypassing moderation status on a list.
+
+2003-07-14  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release version 1.0.2.
+
+2003-06-20  Lars Wirzenius  <liw@iki.fi>
+
+	* enemies-of-carlotta.1: Fixed the example for creating a
+	mailing list.
+	
+	* eoc.py: Added option --show-lists, from Stefan (who gave no
+	last name).
+
+2003-05-11  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release version 1.0.1.
+
+2003-05-11  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Bounce handling was totally broken, because the
+	final step was missing. What used to happen: EoC sends mail to
+	subscribers, it bounces, states goes from "ok" to "bounced";
+	after one week, cleaning woman sends probe; two weeks after
+	bounce, cleaning woman unsubscribes. What was missing: if probe
+	bounces, state is set to "probebounced", and cleaning woman only
+	unsubscribes if state is "probebounced", otherwise it resets
+	state to "ok". This was quite an embarrassing bug.
+
+2003-05-11  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: --help option implemented.
+	* eoc.py: Don't create dotdir if only --help is given.
+	* eoc.py: If dotdir exists, but secret doesn't, create secret
+	instead of crashing.
+
+2003-04-13  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release version 1.0.
+	
+	* There have been no changes. I had planned to improve
+	documentation, but the release party is tomorrow and, well,
+	I want this out. Anyway, I'll have a better idea what to put
+	into the manual if people first send me hate mail about the
+	difficult parts.
+
+2003-04-13  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release version 0.23.
+
+2003-04-13  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: -reject now actually removes the rejected message. Oops.
+
+2003-04-13  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Changed mail command -setlist to welcome new subscribers
+	and say goodbye to old ones.
+
+	* eoc.py: Added mail command -setlistsilently, which is the same
+	as -setlist, but preserves the old behavior of not welcoming or
+	saying goodbye.
+	
+	* templates/setlist-confirm{,.es,.fi,.fr}: Removed the sentence
+	saying that new subscribers won't be welcomed. Hopefully I
+	recognized it correctly in French and Spanish.
+
+2003-03-22  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release 0.22.
+
+2003-03-22  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Messages sent by EoC that used to have an empty SMTP
+	sender (which made them look like bounce messages) now have
+	foo-ignore@example (for the foo@example.com list). This avoids
+	having to deal with different ways to specify an empty sender
+	and is also more correct since the messages sent by EoC aren't
+	really bounces.
+
+2003-03-16  Lars Wirzenius  <liw@iki.fi>
+
+	* Making release version 0.21.
+
+2003-03-15  Lars Wirzenius  <liw@iki.fi>
+
+	* templates/*.es and *.fr: Translations to Spanish for new
+	templates by Ricardo Javier Cardenes, and to French by Pierre
+	Machard.
+
+2003-03-15  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Implemented -setlist command to allow list owner to
+	change the whole subscriber list as one operation. This should
+	be useful for people maintaining the list of subscriber outside
+	EoC's control, e.g., when the list is generated from a database.
+	
+	* templates/setlist-badlist, templates/setlist-confirm,
+	templates/setlist-done, templates/setlist-sorry: New templates
+	for this feature. Need to be translated.
+	
+	* templates/setlist-*.fi: Translated to Finnish.
+
+2003-03-15  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: If the sender of a subscription or unsubscription
+	request is a list owner, the list owners are requested to do
+	the confirmation, instead of the address being subscribed.
+	The welcome or goodbye message is still sent to the subscriber.
+
+2003-03-15  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: When someone is sending mail to a moderated list,
+	inform them that their message has been sent to the list owners
+	for approval.
+	
+	* templates/msg-wait: New mail template. Needs translations.
+	
+	* templates/msg-wait.fi: Translated to Finnish.
+
+2003-03-15  Lars Wirzenius  <liw@iki.fi>
+
+	* enemies-of-carlotta.1.fr: Proofread translation by Gérard
+	Delafond, sent by Pierre Machard.
+
+2003-03-15  Lars Wirzenius  <liw@iki.fi>
+
+	* templates/footer.es, templates/footer.es: Translations re-worded
+	so that they only use 7 bit ASCII characters, to avoid charset
+	problems. Thanks to Pierre Machard and Ricardo Javier Cardenes.
+
+2003-03-14  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: When subscribing to a list with subscription moderation,
+	the would-be subscriber is notified that a request has been sent
+	to the moderator and that they need to be patient.
+	
+    	* eocTests.py: Related changes.
+
+	* templates/sub-wait: New mail template for this. Needs
+	translation.
+	
+	* templates/sub-wait.fi: Translated sub-wait to Finnish.
+	
+	* templates/*.fr: Added Content-type headers to all templates.
+	
+2003-03-14  Lars Wirzenius  <liw@iki.fi>
+
+	* templates/footer.fi: Reworded to use only us-ascii letters.
+
+2003-03-08  Lars Wirzenius  <liw@iki.fi>
+
+	* BENCHMARKS, eoc-benchmark, eoc-benchmark-procmailrc: Added.
+
+2003-02-25  Lars Wirzenius  <liw@iki.fi>
+
+	* enemies-of-carlotta.1.fr, templates/*.fr: Added translations
+	sent by Pierre Machard (pierre at machard.org).
+	
+	* templates/*.es: Added translations sent by Ricardo Javier
+	Cardenes (ricardo at conysis.com).
+	
+	* Making release 0.20.
+
+2003-02-22  Lars Wirzenius  <liw@iki.fi>
+
+    	* eoc.py: Added configuration option "language".
+	
+	* templates/*.fi: Translated templates to Finnish so that I can
+	test the "language" configuration option.
+
+	* enemies-of-carlotta.1: Added "CONFIGURATION" section.
+	
+	* Making relase 0.19.
+
+2003-02-18  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Use os.path.isfile instead of os.path.exists to see
+	whether a MessageBox contains a file.
+
+2003-02-16  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Command line options --edit, --subscribe, --unsubscribe,
+	and --list now allow the list name to be abbreviated by
+	leaving out the domain (and @). I don't want to allow shorter
+	abbreviations to make it less likely that you specify the wrong
+	list by mistake.
+	
+	* eoc.py: When a bouncing address is restored to "ok" status,
+	its bounce message is removed from the bounce-box.
+	
+	* eoc.py: Added configuration options mail-on-forced-unsubscribe
+	and mail-on-subscription-changes.
+	
+	* Making release 0.18.
+
+2003-02-09  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Applied patch from Ricardo Javier Cardenes
+	<ricardo@conysis.com> to implement posting option "auto", which
+	will let messages from subscribers automatically into the list
+	and send others to the moderator.
+	
+	* Making release 0.17.
+
+2003-01-12  Lars Wirzenius  <liw@iki.fi>
+
+    	* Releasing version 0.16.1.
+
+	* eoc.py: Bounce message quoting had a stupid bug: it didn't 
+	add newlines.
+
+2003-01-11  Lars Wirzenius  <liw@iki.fi>
+
+    	* Releasing version 0.16.
+
+    	* eoc.py: First bounce message is now saved (up to 4096 bytes) and
+	quoted in the bounce-warning message.
+
+    	* eoc.py: When state changes to bounce, it is noted in the log file.
+
+	* eoc.py, eocTests.py: Addresses now can't be added twice to
+	the list.
+
+	* eoc.py: Added missing exception MissingTemplate.
+	
+2002-12-11  Lars Wirzenius  <liw@iki.fi>
+
+	* Releasing version 0.15.
+
+2002-12-08  Lars Wirzenius  <liw@iki.fi>
+
+	* Added --moderate option for asking a message to be
+	moderated. To be used for spam filtering, at least.
+
+2002-12-08  Lars Wirzenius  <liw@iki.fi>
+
+	* eocTests.py: Set the quiet flag, so that "make check" doesn't
+	output debuggning messages.
+
+2002-12-08  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Added --smtp-server option for sending via SMTP, not
+	/usr/sbin/sendmail.
+	
+	* enemies-of-carlotta.1: Documented all options.
+	
+	* eocTests.py: Don't require a dot-eoc directory for running
+	the tests.
+
+2002-12-08  Lars Wirzenius  <liw@iki.fi>
+
+	* Releasing version 0.14.
+
+2002-12-08  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Also look in the list's template directory for templates.
+	This is useful for doing list specific customizations, e.g., for
+	the footer.
+
+2002-12-07  Lars Wirzenius  <liw@iki.fi>
+
+	* enemies-of-carlotta: Wrote startup wrapper for faster startup.
+	
+	* Makefile: Install startup wrapper as the binary, and eoc.py
+	into the share directory, plus compile eoc.py on installtion.§
+
+2002-11-04  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Cleaning woman now logs addresses it removes and sends
+	a final goodbye message when it does.
+
+    	* templates/bounce-probe: Fixed spelling mistake.
+
+	* templates/bounce-goodbye: Wrote.
+
+2002-10-26  Lars Wirzenius  <liw@iki.fi>
+
+	* Added support for a footer to be appended to each mail.
+
+2002-10-26  Lars Wirzenius  <liw@iki.fi>
+
+	* A bounce splits a group with many addresses. If the original group
+	contained addresses in several domains, it is split into groups 
+	according to domains, otherwise into groups with single addresses.
+
+	* --cleaning-woman joins groups that haven't bounced for a week
+	into bigger groups.
+
+2002-10-26  Lars Wirzenius  <liw@iki.fi>
+
+	* Releasing version 0.13.
+
+2002-10-26  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Bug fix. When there were over ten subscribers, the
+	generation of group ids was wrong, since a list of group ids
+	was sorted lexically, instead of numerically.
+	
+	* eocTests.py: Added test case to test this.
+
+2002-10-26  Lars Wirzenius  <liw@iki.fi>
+
+	* eoc.py: Added --quiet and --sendmail options.
+	
+	* eocTests.py: Related changes.
+
+2002-10-21  Lars Wirzenius  <liw@iki.fi>
+
+	* Releasing version 0.12.
+
+2002-10-21  Lars Wirzenius  <liw@iki.fi>
+
+	* --incoming always reads stdin.
+
+2002-10-11  Lars Wirzenius  <liw@iki.fi>
+
+	* Makefile: added $(prefix), installation of templates.
+	
+	* fix-config: directory is given on the command line.
+	
+	* eoc.py: Added some more debugging output.
+
+2002-09-22  Lars Wirzenius  <liw@iki.fi>
+
+	* Starting upstream ChangeLog. Sooner or later someone else is
+	  going to be maintaining the Debian packaging stuff, and then
+	  it's sensible to keep things separate.
+
+    	* Removed debian/*. I can live without them myself, and I don't
+	  want to maintain them when there are perfectly too Debian
+	  developers available. :)
+
+    	* Makefile: Added an install target. Very simplistic.
+	
+	* COPYING, README: Added these files. This is beginning to seem
+	  like something that can be shown in public.
+
+    	* Releasing version 0.11.

@@ -1,0 +1,36 @@
+From: %(From)s
+To: %(To)s
+Subject: Adresse supprimée de la liste %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Bonjour, 
+
+Ce courriel a été envoyé par le gestionnaire de la liste de diffusion
+
+    %(list)s
+
+aux personnes qui sont responsables de la liste.
+
+L'adresse suivante a été enlevée de la liste en raison de problème dans
+la livraison du courriel destiné à :
+
+    %(address)s
+
+Le message qui n'a pu être délivré se trouve en bas de ce courriel. À 
+moins qu'il n'y ait quelque chose de vraiment particulier, ce courriel n'est
+présent qu'à titre informatif; vous n'avez pas à vous en souciez.
+
+Merci.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=bounce.txt
+ 
+%(bounce)s--%(boundary)s--
+

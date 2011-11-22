@@ -1,0 +1,18 @@
+From: %(From)s
+To: %(To)s
+Subject: Willkommen auf der Liste %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Willkommen auf der Liste %(list)s!
+
+Falls Sie Ihr Abonnement wieder kündigen wollen senden
+Sie bitte eine E-Mail an %(local)s-unsubscribe@%(domain)s.
+
+Um eine Anleitung zur Benutzung der Listen-Software zu erhalten,
+senden Sie bitte eine E-Mail an %(local)s-help@%(domain)s.
+
+Falls Sie Hilfe benötigen, können Sie auch an den Verwalter
+der Liste unter %(local)s-owner@%(domain)s schreiben.
+
+Vielen Dank.

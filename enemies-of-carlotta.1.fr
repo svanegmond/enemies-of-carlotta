@@ -1,0 +1,488 @@
+.\" This file was generated with po4a. Translate the source file.
+.\" 
+.TH ENEMIES\-OF\-CARLOTTA 1   
+.SH NOM
+enemies\-of\-carlotta \- Gestionnaire simple de listes de diffusion
+.SH SYNOPSIS
+\fBenemies\-of\-carlotta\fP [\fIoptions\fP] [\fIadresses\fP]
+.SH DESCRIPTION
+\fBenemies\-of\-carlotta\fP est un gestionnaire simple de listes de diffusion.    
+.PP
+Enemies of Carlotta conserve toutes les données des listes dans le 
+répertoire \fI~/.enemies\-of\-carlotta\fP. Celui\-ci sera créé automatiquement 
+lors de la création de la première liste.  Le traitement des courriels par 
+le gestionnaire de listes doit être configuré manuellement. Les détails 
+peuvent varier d'un système à l'autre. Pour QMail et Postfix, voir 
+ci\-dessous.
+.PP
+Chaque liste possède un ou plusieurs propriétaires, qui modèrent également 
+les inscriptions ou certains messages, voire tous.  Sur les listes non 
+modérées, les propriétaires de la liste sont chargés de répondre aux 
+questions concernant la liste.  Sur les listes totalement modérées, ils 
+doivent approuver chaque message avant qu'il ne soit envoyé sur la liste.  
+Sur les liste où \fIposting=auto\fP, les messages des abonnés sont 
+automatiquement envoyés à la liste, et les modérateurs n'ont besoin 
+d'approuver que les messages qui ne proviennent pas des abonnés.
+.SH OPTIONS
+.TP 
+\fB\-\-name=\fPfoo@example.com
+préciser la liste sur laquelle la commande doit être effectuée.  La plupart 
+des options doivent être accompagnées du nom de la liste concernée. Avec les 
+options \-\-edit, \-\-subscribe, \-\-unsubscribe et \-\-list, le nom peut être 
+abrégé en enlevant le signe @ et le domaine.
+.TP 
+\fB\-\-create\fP
+créer une nouvelle liste de diffusion. Au moins un propriétaire doit être 
+précisé à l'aide de \fB\-\-owner\fP.
+.TP 
+\fB\-\-owner=\fP\fIadresse\fP
+ajouter un propriétaire à la liste lors de sa création
+.TP 
+\fB\-\-moderator=\fP\fIadresse\fP
+ajouter un modérateur à la liste lors de sa création ou de son édition
+.TP 
+\fB\-\-language=\fP\fIcode\-de\-la\-langue\fP
+configurer le code de la langue utilisé pour récupérer les fichiers 
+modèles. Le code peut être vide (l'anglais sera utilisé par défaut) ou 
+composé de deux lettres comme \fBfr\fP ou \fBes\fP.
+.TP 
+\fB\-\-cleaning\-woman\fP
+gérer les adresses invalides et nettoyer quelques autres éléments. La 
+commande  \fBenemies\-of\-carlotta \-\-cleaning\-woman\fP doit être lancée 
+périodiquement, comme une fois par heure, pour nettoyer l'ensemble des 
+listes de diffusion.
+.TP 
+\fB\-\-destroy\fP
+détruire une liste
+.TP 
+\fB\-\-edit\fP
+modifier la configuration d'une liste
+.TP 
+\fB\-\-subscription=\fP\fItype\fP
+définir le mode d'abonnement à \fIfree\fP (libre) ou \fImoderated\fP (modéré) lors 
+de la création de la liste. À utiliser en combinaison avec \fB\-\-edit\fP ou 
+\fB\-\-create\fP.
+.TP 
+\fB\-\-posting=\fP\fItype\fP
+définir le mode d'envoi à \fIfree\fP (libre), \fIauto\fP (automatique) ou 
+\fImoderated\fP (modéré). À utiliser en combinaison avec \fB\-\-edit\fP ou 
+\fB\-\-create\fP.
+.TP 
+\fB\-\-archived=\fP\fIyes\-ou\-no\fP
+définir si les messages de la liste doivent être archivés dans le 
+sous\-répertoire \fBarchive\-box\fP du répertoire de la liste, lui\-même présent 
+dans le répertoire \fB~/.enemies\-of\-carlotta\fP. Utiliser \fIyes\fP (oui) ou \fIno\fP 
+(non).
+.TP 
+\fB\-\-mail\-on\-subscription\-changes=\fP\fIyes\-ou\-no\fP
+définir si les propriétaires de la liste doivent être avertis lors d'un 
+abonnement ou d'un désabonnement. Utiliser \fIyes\fP (oui) ou \fIno\fP (non). La 
+valeur par défaut est no.
+.TP 
+\fB\-\-mail\-on\-forced\-unsubscription=\fP\fIyes\-ou\-no\fP
+définir si les propriétaires de la liste doivent être avertis lorsque 
+quelqu'un est retiré de la liste en raison d'une adresse trop souvent 
+invalide. Utiliser \fIyes\fP (oui) ou \fIno\fP (non). La valeur par défaut est no.
+.TP 
+\fB\-\-ignore\-bounce=\fP\fIyes\-ou\-no\fP
+définir si les renvois pour adresse invalide doivent être ignorés. Utiliser 
+\fIyes\fP (oui) ou \fIno\fP (non). La valeur par défaut est no.
+.TP 
+\fB\-\-list\fP
+lister l'ensemble des abonnés à une liste.
+.TP 
+\fB\-\-subscribe\fP
+ajouter des abonnés à la liste. Les arguments qui ne sont pas des options 
+sont les adresses à abonner. Les adresses ajoutées de cette façon ne 
+recevront pas de demande de confirmation.
+.TP 
+\fB\-\-unsubscribe\fP
+enlever des abonnés de la liste. Les arguments qui ne sont pas des options 
+sont les adresses à désabonner. Les adresses enlevées de cette manière ne 
+recevront pas de demande de confirmation.
+.TP 
+\fB\-\-incoming\fP
+traiter un message entrant sur l'entrée standard. L'adresse de l'expéditeur 
+de l'enveloppe SMTP doit être précisée par la variable d'environnement 
+\fISENDER\fP et l'adresse du destinataire de l'enveloppe SMTP doit être 
+précisée par la variable d'environnement \fIRECIPIENT\fP. (QMail et Postfix 
+traitent cela automatiquement.)
+.TP 
+\fB\-\-skip\-prefix=\fP\fIchaîne\fP
+retirer \fIchaîne\fP du début de l'adresse de destination avant de l'analyser 
+pour déterminer à quelle liste le message est destiné. Ceci permet le 
+traitement des domaines virtuels avec QMail et Postfix, voir ci\-dessous.
+.TP 
+\fB\-\-domain=\fP\fInom.du.domaine\fP
+remplacer le nom de domaine par \fInom.du.domaine\fP dans l'adresse de 
+destination pour déterminer à quelle liste le message est destiné. Ceci 
+permet le traitement des domaines virtuels avec QMail et Postfix.
+.TP 
+\fB\-\-is\-list\fP
+déterminer si l'adresse indiquée par \fB\-\-name\fP fait référence à une liste 
+valide. Le code de sortie zéro (succès) est retourné si c'est le cas, un 
+(échec) dans le cas contraire.
+.TP 
+\fB\-\-sendmail=\fP\fIchemin\fP
+utiliser \fIchemin\fP au lieu de \fB/usr/sbin/sendmail\fP pour envoyer des 
+courriels via une interface en ligne de commande. Cette commande doit 
+respecter l'interface de la ligne de commande sendmail.
+.TP 
+\fB\-\-smtp\-server=\fP\fIhôte\fP
+envoyer les courriels en utilisant le serveur SMTP sur \fIhôte\fP (port 25). Le 
+serveur doit être configuré pour permettre à la machine sur laquelle 
+fonctionne la liste de l'utiliser comme relais. Par défaut, l'interface en 
+ligne de commande est utilisée. L'envoi par SMTP n'est utilisé qu'avec cette 
+option.
+.TP 
+\fB\-\-qmqp\-server=\fP\fIhôte\fP
+envoyer les courriels en utilisant le serveur QMQP sur \fIhôte\fP (port 
+628). Le serveur doit être configuré pour permettre à la machine sur 
+laquelle fonctionne la liste de l'utiliser comme relais. Par défaut, 
+l'interface en ligne de commande est utilisée. L'envoi par QMQP n'est 
+utilisé qu'avec cette option.
+.TP 
+\fB\-\-moderate\fP
+forcer un message entrant à être modéré, même s'il est envoyé à une liste où 
+l'envoi est libre. Cela peut être utilisé pour filtrer les courriers 
+indésirables\ : les messages entrants peuvent être filtrés par n'importe 
+quel système de filtrage des courriels\ ; dès lors qu'un message semble être 
+indésirable, une modération par un humain peut être demandée.
+.TP 
+\fB\-\-post\fP
+forcer un message entrant à être envoyé, même s'il est envoyé à une liste où 
+l'envoi est modéré. Cela peut être utilisé lorsqu'une vérification externe a 
+lieu pour définir si le courriel est acceptable sur la liste, par exemple en 
+vérifiant les signatures électroniques.
+.TP 
+\fB\-\-quiet\fP
+ne pas envoyer les messages de débogage des journaux sur la sortie d'erreur 
+standard, contrairement au comportement par défaut.
+.TP 
+\fB\-\-sender=\fP\fIfoo@example.com\fP
+.TP 
+\fB\-\-recipient=\fP\fIfoo@example.com\fP
+écraser les variables d'environnement \fBSENDER\fP et \fBRECIPIENT\fP 
+respectivement, à utiliser en combinaison avec \fB\-\-incoming\fP et 
+\fB\-\-is\-list\fP.
+.TP 
+\fB\-\-get\fP
+obtenir les valeurs d'une ou plusieurs variables de configuration. Le nom 
+des variables est indiqué sur la ligne de commande après les options. Chaque 
+valeur est affichée sur une ligne séparée.
+.TP 
+\fB\-\-set\fP
+configurer les valeurs d'une ou plusieurs variables de configuration. Les 
+noms et valeurs sont donnés sur la ligne de commande après les options et 
+séparés par un signe d'égalité («\ =\ »). Par exemple, la commande suivante 
+configurerait une liste en français\ : \fBenemies\-of\-carlotta \-\-name=foo@bar 
+\-\-set language=fr\fP
+.TP 
+\fB\-\-version\fP
+afficher la version du programme
+.TP 
+\fB\-\-show\-lists\fP
+lister les listes connues de enemies\-of\-carlotta
+.SH CONFIGURATION
+Chaque liste est représentée par un répertoire, nommé d'après le nom de la 
+liste, sous le répertoire \fI~/.enemies\-of\-carlotta\fP. Ce répertoire contient 
+plusieurs fichiers et répertoires décrits ci\-dessous. En général, il n'est 
+pas nécessaire de toucher à ces répertoires. Cependant, certaines 
+configurations ésotériques peuvent uniquement être faites en éditant le 
+fichier de configuration de la liste.
+.TP 
+\fBconfig\fP
+Fichier de configuration de la liste. Le contenu est décrit ci\-dessous.
+.TP 
+\fBsubscribers\fP
+Base de données des abonnés. Chaque ligne contient un groupe d'abonnés, dont 
+les cinq premiers espaces délimitent les champs qui sont l'identifiant du 
+groupe, l'état, la date de création du groupe, la date du message de retour 
+qui a fait passer l'état de la liste de «\ ok\ » à «\ bounced\ », et 
+l'identifiant du message de retour.
+.TP 
+\fBarchive\-box\fP
+Messages archivés.
+.TP 
+\fBbounce\-box\fP
+Groupes des messages de retour qui ne sont pas dans l'état «\ ok\ ».
+.TP 
+\fBheaders\-to\-add\fP
+En\-têtes à ajouter aux courriels envoyés à la liste. Ceux\-ci sont copiés aux 
+débuts des en\-têtes existants exactement tels qu'ils sont dans ce fichier, 
+après que les en\-têtes de la liste (comme «\ List\-ID\ ») ont été ajoutés et 
+que ceux mentionnés dans \fBheaders\-to\-remove\fP ont été retirés.
+.TP 
+\fBheaders\-to\-remove\fP
+En\-têtes à retirer des messages envoyés à la liste.
+.TP 
+\fBmoderation\-box\fP
+Messages en attente d'approbation du modérateur.
+.TP 
+\fBsubscription\-box\fP
+Requêtes d'abonnement et de désabonnement en attente de confirmation de la 
+part de l'utilisateur.
+.TP 
+\fBtemplates\fP
+Répertoires qui contiennent les modèles spécifiques à une liste 
+(optionnel). Les modèles seront recherchés d'abord dans ce répertoire, s'il 
+existe, puis dans les répertoires du système. Un fichier vide signifie que 
+le message correspondant ne doit pas être envoyé. Cela peut être utilisé par 
+exemple pour activer uniquement pour certaines listes les messages du type 
+«\ veuillez attendre la modération de votre message\ ».
+.TP 
+\fBplugins\fP
+Répertoires contenant des grephons, à savoir des fichiers source en Python 
+qui sont chargés automatiquement par EoC au démarrage. Ces grephons peuvent 
+modifier le comportement d'EoC.
+.PP
+Le fichier \fBconfig\fP possède un format de type \fImot\-clé\fP=\fIvaleur\fP\ :
+.PP
+.RS
+.nf
+[list]
+owners = liw@liw.iki.fi
+archived = no
+posting = free
+subscription = free
+mail\-on\-subscription\-changes = yes
+mail\-on\-forced\-unsubscribe = yes
+language = fr
+.fi
+.RE
+.PP
+Les mots clés \fBarchived\fP, \fBposting\fP, et \fBsubscription\fP correspondent aux 
+options qui portent les mêmes noms. Les autres mots\-clés sont\ :
+.TP 
+\fBowners\fP
+Liste des adresses des propriétaires, définie avec l'option \fI\-\-owner\fP.
+.TP 
+\fBmoderators\fP
+Liste des adresses des modérateurs, définie avec l'option \fI\-\-moderator\fP.
+.TP 
+\fBmail\-on\-subscription\-changes\fP
+Valeur définissant si les propriétaires doivent être avertis lorsqu'un 
+utilisateur s'abonne ou se désabonne.
+.TP 
+\fBmail\-on\-forced\-unsubscribe\fP
+Valeur définissant si les propriétaires doivent être avertis si quelqu'un 
+est retiré d'une liste suite à une adresse trop souvent invalide.
+.TP 
+\fBignore_bounce\fP
+Valeur définissant si les messages de retour sont ignorés sur la 
+liste. Utilisé par exemple lorsque la liste devrait avoir un nombre stable 
+d'abonnés.
+.TP 
+\fBlanguage\fP
+Suffixe pour les modèles, pour permettre la gestion de plusieurs 
+langues. (Si \fIlanguage\fP est défini à «\ fr\ », alors le modèle «\ foo\ » 
+est d'abord recherché en tant que modèle «\ foo.fr\ ».)
+.TP 
+\fBpristine\-headers\fP
+Valeur définissant si les en\-têtes doivent être encodés au format MIME. Si 
+la valeur vaut «\ yes\ », l'encodage aura lieu.
+.SH EXEMPLES
+Créer une liste nommée \fImoviefans@example.com\fP, dont le propriétaire est 
+\fIding@example.com\fP (tout sur la même ligne)\ :
+.sp 1
+.nf
+.RS
+enemies\-of\-carlotta \-\-name=moviefans@example.com
+\-\-owner=ding@example.com \-\-create
+.RE
+.fi
+.PP
+Le système de messagerie doit être configuré pour que ces messages arrivent 
+sur la liste (et à ses adresses de commande). Pour Qmail et Postfix, voir 
+ci\-dessous.
+.PP
+Afficher la liste de tous les abonnés à cette liste\ :
+.sp 1
+.nf
+.RS
+enemies\-of\-carlotta \-\-name=moviefans@example.com \-\-list
+.RE
+.fi
+.PP
+Les personnes voulant s'abonner à la liste doivent envoyer un courriel à
+.sp 1
+.nf
+.RS
+moviefans\-subscribe@example.com
+.RE
+.fi
+.SH QMAIL
+Avec Qmail, pour faire en sorte que les courriels entrants soient traités 
+par Enemies of Carlotta, quelques fichiers \fI.qmail\-extension\fP sont 
+nécessaires pour chaque liste.  Par exemple, si joe est un nom 
+d'utilisateur, pour initialiser la liste de diffusion joe\-fans, deux 
+fichiers doivent être créés\ : \fI.qmail\-fans\fP et \fI.qmail\-fans\-default\fP, qui 
+contiendront
+.sp 1
+.RS
+|enemies\-of\-carlotta \-\-incoming
+.RE
+.PP
+Si les messages à destination d'un domaine virtuel, example.com, délivrés 
+via \fI/var/qmail/control/virtualdomains\fP à \fIjoe\-exampledotcom\fP, les 
+fichiers seront nommés \fI.qmail\-exampledotcom\-fans\fP et 
+\&\fI.qmail\-exampledotcom\-fans\-default\fP et contiendront
+.sp 1
+.RS
+|enemies\-of\-carlotta \-\-incoming \-\-skip\-prefix=joe\-exampledotcom\-
+.RE
+.sp 1
+(tout sur la même ligne).
+.SH POSTFIX
+Avec Postfix, un fichier \fI.forward\fP contenant
+.sp 1
+.RS
+"|procmail \-p"
+.RE
+.sp 1
+sera nécessaire, ainsi qu'un fichier \fI.procmailrc\fP contenant
+.sp 1
+.RS
+:0
+.br
+* ? enemies\-of\-carlotta \-\-name=$RECIPIENT \-\-is\-list
+.br
+| enemies\-of\-carlotta \-\-incoming
+.RE
+.PP
+Pour utiliser Enemies of Carlotta avec un domaine virtuel Postfix, une 
+\fIcarte virtuelle d'expressions rationnelles\fP généralement appelée 
+\fI/etc/postfix/virtual_regexp\fP devra être créée (pour l'activer, ajouter 
+\fIvirtual_maps = regexp:/etc/postfix/virtual_regexp\fP dans le fichier 
+\fI/etc/postfix/main.cf\fP).  Le fichier d'expressions rationnelles doit faire 
+des choses horribles pour conserver l'adresse de destination. Il faut donc 
+ajouter\ :
+.sp 1
+.RS
+/^your.virtual.domain$/ dummy
+.br
+/^(yourlist|yourlist\-.*)@(your.virtual.domain)$/ joe+virtual\-$1
+.RE
+.sp 1
+Soit deux lignes. Si \fIrecipient_delimiter\fP pour Postfix est configuré avec 
+un moins au lieu d'un plus, utiliser \fBjoe\-virtual\fP. Ensuite dans le fichier 
+\&\fI.procmailrc\fP, ajouter les options \fI\-\-skip\-prefix=joe\-virtual\-\fP et 
+\fI\-\-domain=your.virtual.domain\fP pour les deux appels à 
+\fBenemies\-of\-carlotta\fP.
+.PP
+Ces manipulations restent complexes.
+.SH "COMMANDES PAR MESSAGE"
+Les utilisateurs et propriétaires utilisent Enemies of Carlotta par courriel 
+en utilisant des adresses de commande comme 
+\fBfoo\-subscribe@example.com\fP. Voici une liste de toutes les adresses de 
+commande accessibles aux utilisateurs et propriétaires. Dans tous ces 
+exemples, le nom de la liste de diffusion sera \fBfoo@example.com\fP.
+.SS "Commandes par message accessibles à tout le monde"
+Ces commandes peuvent servir à tout le monde et ne demandent aucun privilège 
+spécial.
+.TP 
+\fBfoo@example.com\fP
+Envoie un courriel à tous les abonnés. Le message peut avoir à être approuvé 
+d'abord par les modérateurs de la liste, qui ont aussi le pouvoir de le 
+rejeter.
+.TP 
+\fBfoo\-owner@example.com\fP
+Envoie un courriel au(x) propriétaire(s) de la liste.
+.TP 
+\fBfoo\-help@example.com\fP
+Retourne en réponse à ce courriel un message contenant l'aide de la liste.
+.TP 
+\fBfoo\-subscribe@example.com\fP
+Inscrit l'auteur du courriel à la liste. Le gestionnaire de listes répondra 
+en demandant une confirmation. L'inscription n'aura lieu qu'en cas de 
+réponse à cette demande. De cette manière, les personnes malveillantes ne 
+peuvent ajouter votre adresse sur une ou beaucoup de listes de diffusion.
+.TP 
+\fBfoo\-subscribe\-joe=example.com@example.com\fP
+Inscrit joe@example.com à la liste. Pour inscrire une adresse différente de 
+celle utilisée pour la demande d'abonnement, utiliser cette forme. La 
+demande de confirmation sera envoyée à joe@example.com puisque cette adresse 
+seulement sera abonnée à la liste.
+.TP 
+\fBfoo\-unsubscribe@example.com\fP
+Désinscrit l'auteur du courriel de la liste. Encore une fois, une demande de 
+confirmation sera envoyée pour éviter que des personnes malveillantes 
+désinscrivent d'autres personnes.
+.TP 
+\fBfoo\-unsubscribe\-joe=example.com@example.com\fP
+Désinscrit joe@example.com de la liste. Encore une fois, cette dernière 
+adresse recevra la demande de confirmation.
+.SS "Commandes par message pour les propriétaires de la liste."
+Les commandes suivantes peuvent être utilisées pour administrer la liste.
+.TP 
+\fBfoo\-subscribe\-joe=example.com@example.com\fP
+Si un propriétaire envoie un courriel de ce type, il recevra la demande de 
+confirmation à la place de joe@example.com. Il est souvent préférable de 
+laisser les gens s'inscrire eux\-mêmes, mais parfois cela peut être utile que 
+le propriétaire s'en occupe.
+.TP 
+\fBfoo\-unsubscribe\-joe=example.com@example.com\fP
+Les propriétaires peuvent également désinscrire d'autres personnes.
+.TP 
+\fBfoo\-list@example.com\fP
+Retourne la liste des abonnés à la liste. Cela ne marche que si l'adresse de 
+l'expéditeur est celle de l'un des propriétaires. L'adresse de l'expéditeur 
+est celle utilisée au niveau SMTP et non celle dans l'en\-tête From:.
+.TP 
+\fBfoo\-setlist@example.com\fP
+Permet à un propriétaire de configurer la liste des abonnés en un seul 
+coup. Cela correspond à une suite de commandes \-subscribe et \-unsubscribe, 
+mais en plus simple. Tous ceux qui seront ajoutés à la liste recevront un 
+message de bienvenue, alors que ceux qui seront retirés recevront un message 
+d'adieu.
+.TP 
+\fBfoo\-setlistsilently@example.com\fP
+Commande similaire à \-setlist, sans les envois des messages de bienvenue et 
+d'adieu.
+.SH GREPHONS
+Enemies of Carlotta accepte des grephons. Des connaissances en Python sont 
+nécessaires pour comprendre cette section.
+.PP
+Un grephon est un module Python (un fichier avec un suffixe \fB.py\fP), placé 
+dans le répertoire \fB~/.enemies\-of\-carlotta/plugins\fP. Les grephons sont 
+chargés automatiquement au démarrage, si la version déclarée de l'interface 
+correspond à celle utilisée par Enemies of Carlotta. La version de 
+l'interface est déclarée par la variable globale \fBPLUGIN_INTERFACE_VERSION\fP 
+du module.
+.PP
+Les grephons peuvent définir des fonctions d'ancrage appelées au bon endroit 
+dans le code d'EoC. Pour le moment, la seule fonction d'ancrage est 
+\fBsend_mail_to_subscribers_hook\fP, qui peut modifier un courriel avant qu'il 
+ne soit envoyé aux abonnés. La fonction devrait ressembler à\ :
+.PP
+.ti +5
+def send_mail_to_subscribers_hook(list, text):
+.PP
+L'argument \fIlist\fP est une référence à l'objet \fIMailingList\fP qui correspond 
+à la liste concernée, et \fItext\fP est le texte complet du courriel tel qu'il 
+existe actuellement. La fonction devrait retourner le nouveau contenu de ce 
+courriel.
+.SH FICHIERS
+.TP 
+\fI~/.enemies\-of\-carlotta\fP
+Ensemble des fichiers en rapport avec les listes de diffusion.
+.TP 
+\fI~/.enemies\-of\-carlotta/secret\fP
+Mots de passe secrets utilisés pour générer des adresses signées pour le 
+contrôle des messages de retour et la validation des abonnements.
+.TP 
+\fI~/.enemies\-of\-carlotta/foo@example.com\fP
+Répertoire contenant les données appartenant à la liste de diffusion 
+foo@example.com.  À l'exception du fichier de \fIconfig\fP qui se trouve dans 
+ce répertoire, rien ne devrait être à modifier.
+.TP 
+\fI~/.enemies\-of\-carlotta/foo@example.com/config\fP
+Fichier de configuration pour la liste de diffusion. Ce fichier devra être 
+édité pour modifier les options de modération ou les propriétaires de la 
+liste.
+.SH "VOIR AUSSI"
+Page web d'\fI«\ Enemies of Carlotta\ »\fP\ : \fIhttp://www.iki.fi/liw/eoc/\fP.
+.SH "TRADUCTION"
+Pierre Machard <pmachard@tuxfamily.org>, 2003
+.br
+Thomas Huriaux <thomas.huriaux@gmail.com>, 2005

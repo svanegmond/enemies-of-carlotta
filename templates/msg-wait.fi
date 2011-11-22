@@ -1,0 +1,22 @@
+From: %(From)s
+To: %(To)s
+Subject: Odota omistajan vahvistusta: %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Tämän viestin on lähettänyt postituslistaa %(list)s
+operoiva ohjelmisto.
+
+Sinä, tai joku (mahdollisesti roskapostittaja) joka väittää olevansa sinä,
+on lähettänyt postituslistalle viestin. Jos se et ollut sinä, voit 
+unohtaa tämän viestin. Jos se olit sinä, jatka lukemista.
+
+Listalle lähettämäsi viesti on lähetetty listan omistajille hyväksyntää
+varten. Tämä voi kestää hetken.
+
+Postituslistaohjelmiston käyttöohjeet saa pyytämällä osoitteesta
+%(local)s-help@%(domain)s .
+
+Listan omistajat saat kiinni osoitteesta
+%(local)s-owner@%(domain)s .
+

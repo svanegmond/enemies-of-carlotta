@@ -1,0 +1,24 @@
+From: %(From)s
+To: %(To)s
+Subject: Votre courriel ne peut être délivré, vous êtes désabonné de la liste %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Bonjour, 
+
+Vous vous étiez abonné à la liste de diffusion %(list)s.
+
+Malheureusement, les courriels qui vous ont été envoyés par le gestionnaire 
+de la liste de diffusion ne sont jamais arrivés à destination. Ce phénomène
+s'étant reproduit un grand nombre de fois, vous avez été automatiquement
+désabonné de la liste. Une fois que vos problèmes de courriels seront 
+corrigés, n'hésitez pas à vous réabonner.
+
+Pour obtenir des informations sur l'utilisation du logiciel de gestion de
+la liste de diffusion, envoyez un courriel à %(local)s-help@%(domain)s .
+
+Si vous rencontrez des problèmes, veuillez prendre contact avec la
+personne responsable de la liste de diffusion à l'adresse : 
+%(local)s-owner@%(domain)s .
+
+Merci.

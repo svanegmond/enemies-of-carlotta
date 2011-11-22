@@ -1,0 +1,647 @@
+.TH ENEMIES\-OF\-CARLOTTA 1
+.SH NAME
+enemies\-of\-carlotta \- a simple mailing list manager
+.SH SYNOPSIS
+.B enemies\-of\-carlotta 
+.IR "" [ options "] [" addresses ]
+.SH "DESCRIPTION"
+.B enemies\-of\-carlotta
+is a simple mailing list manager.
+If you don't know what a mailing list manager is, you should learn
+what they are before trying to use one.
+A manual page is unfortunately too short to explain it.
+.PP
+Enemies of Carlotta keeps all data about the lists in the
+.I ~/.enemies\-of\-carlotta
+directory.
+It will be created automatically when you create your first list.
+You need to arrange manually for the mails to be processed by the
+list manager.
+The details differ from mail system to another.
+For QMail and Postfix, see below.
+.PP
+Each list has one or more owners, who also moderate subscriptions or
+moderate some or all postings.
+On completely unmoderated lists the list owners are responsible for
+answering questions about the list.
+On completely moderated lists, they have to approve each message before
+it is sent to the list.
+On lists with 
+.IR posting=auto ,
+messages from subscribers are sent automatically to the list, and the
+moderators have to approve the rest.
+.SH OPTIONS
+.TP
+.BR \-\-name= foo@example.com
+Specify the list the command is to operate on.
+Most of the remaining options require you to set the list name with this
+option.
+With the \-\-edit, \-\-subscribe, \-\-unsubscribe, and \-\-list options,
+the name can be abbreviated to by leaving out the @ sign and domain.
+.TP
+.BI \-\-create
+Create a new list.
+You must specify at least one owner with
+.BR \-\-owner .
+.TP
+.BI \-\-owner= address
+Specify a list owner when creating or editing a list.
+.TP
+.BI \-\-moderator= address
+Specificy a list moderator when creating or editing a list.
+.TP
+.BI \-\-language= language\-code
+Set the language code used for looking up template files.
+The code should be empty (the default, meaning English), or a two\-letter
+code such as 
+.B fi
+or
+.BR es .
+.TP
+.B \-\-cleaning\-woman
+Deal with bouncing addresses and do other cleanup.
+You must run
+.B "enemies\-of\-carlotta \-\-cleaning\-woman"
+periodically, such as once per hour.
+It will clean up all your lists.
+.TP
+.BI \-\-destroy
+Destroy the list.
+.TP
+.BI \-\-edit
+Modify the list configuration.
+.TP
+.BI \-\-subscription= type
+When creating a list, set its subscription mode to
+.I free
+or
+.IR moderated .
+Use with
+.BR \-\-edit ,
+or
+.BR \-\-create .
+.TP
+.BI \-\-posting= type
+When creating a list, set its posting mode to
+.IR free 
+(anyone can post),
+.IR auto
+(only subscribers can post, mails from others need to be moderated),
+or
+.IR moderated 
+(all mails are moderated).
+Use with
+.BR \-\-edit ,
+or
+.BR \-\-create .
+.TP
+.BI \-\-archived= yes\-or\-no
+Should list messages be archived to the
+.B archive\-box
+directory in the list directory under the
+.B "~/.enemies\-of\-carlotta"
+directory.
+Use
+.I yes
+or
+.IR no .
+.TP
+.BI \-\-mail\-on\-subscription\-changes= yes\-or\-no
+Should the list owners be notified when someone subscribes to or
+unsubscribes from the list?
+Use
+.I yes
+or
+.IR no .
+Default is no.
+.TP
+.BI \-\-mail\-on\-forced\-unsubscription= yes\-or\-no
+Should list owners be notified when someone is forcibly dropped from
+the list due to too much bouncing?
+Use
+.I yes
+or
+.IR no .
+Default is no.
+.TP
+.BI \-\-ignore\-bounce= yes\-or\-no
+Should bounces be ignored?
+Use
+.I yes
+or
+.IR no .
+Default is no.
+.TP
+.BI \-\-list
+List the subscribers of a list.
+.TP
+.BI \-\-subscribe
+Add subscribers to a list.
+The non\-option arguments are the addresses to be subscribed.
+Note that addresses added this way won't be sent confirmation requests.
+.TP
+.BI \-\-unsubscribe
+Remove subscribers from a list.
+The non\-option arguments are the addresses to be unsubscribed.
+Note that addresses removed this way won't be sent confirmation requests.
+.TP
+.B \-\-incoming
+Deal with an incoming message in the standard input.
+The SMTP envelope sender address must be given in the 
+.I SENDER
+environment variable, and the SMTP envelope recipient address in the
+.I RECIPIENT
+environment variable.
+(QMail and Postfix do this automatically.)
+.TP
+.BI \-\-skip\-prefix= string
+Before analyzing the recipient address to see which list it refers, remove 
+.I string
+from its beginning.
+This helps deal with QMail and Postfix virtual domains, see above.
+.TP
+.BI \-\-domain= domain.name
+Before analyzing the recipient address to see which list it refers, replace
+the domain name part with
+.IR domain.name .
+This helps deal with Postfix virtual domains.
+.TP
+.BI \-\-is\-list
+Does the address specified with
+.B \-\-name
+refer to a valid list?
+This sets the exit code to zero (success) if it does, or one (failure)
+if it does not.
+.TP
+.BI \-\-sendmail= pathname
+Use 
+.I pathname
+instead of
+.B /usr/sbin/sendmail
+for sending mail via a command line interface.
+Note that the command must obey the sendmail command line interface.
+.TP
+.BI \-\-smtp\-server= hostname
+Send mail using the SMTP server at
+.I hostname
+(port 25).
+The server must be configured to allow the list host to relay mail
+through it.
+Note that a command line interface is used by default;
+SMTP sending is used only if you use this option.
+.TP
+.BI \-\-qmqp\-server= hostname
+Send mail using the QMQP server at
+.I hostname
+(port 628).
+The server must be configured to allow the list host to relay mail
+through it.
+Note that a command line interface is used by default;
+QMQP sending is used only if you use this option.
+.TP
+.BI \-\-moderate
+Force an incoming message to be moderated, even if it is going to a list
+where posting is free.
+This can be used for spam filtering: 
+you pipe incoming messages through whatever spam filter you choose to use
+and if the mssage looks like spam, you ask it to be moderated by a human.
+.TP
+.BI \-\-post
+Force an incoming message to be posted, even if it is going to a list
+where posting is moderated.
+This can be used when there is an external check for whether a mail
+is acceptable to the list, e.g., by checking digital signatures.
+.TP
+.BI \-\-quiet
+By default, debugging log messages are sent to the standard error output
+stream.
+With this option, they aren't.
+.TP
+.BI \-\-sender= foo@example.com
+.TP
+.BI \-\-recipient= foo@example.com
+These two options are used with 
+.B \-\-incoming 
+and
+.B \-\-is\-list
+to override the environment variables 
+.B SENDER
+and
+.BR RECIPIENT ,
+respectively.
+.TP
+.BI \-\-get
+Get the values of one or more configuration variables.
+The name of the variables are given on the command line after the options.
+Each value is printed on a separate line.
+.TP
+.BI \-\-set 
+Set the values of one or more configuration variables.
+The names and values are given on the command line after the options
+and separated by an equals sign ("=").
+For example, the following would set the language of a list to Finnish:
+.B "enemies\-of\-carlotta \-\-name=foo@bar \-\-set language=fi"
+.TP
+.BI \-\-version
+Print out the version of the program.
+.TP
+.BI \-\-show\-lists
+List the lists enemies\-of\-carlotta knows about.
+.SH CONFIGURATION
+Each list is represented by a directory, named after the list, in 
+.IR ~/.enemies\-of\-carlotta .
+That directory contains several files and directories, described below.
+In general, it is not necessary to touch these at all.
+However, some esoteric configuration can only be done by hand editing
+of the list configuration file.
+.TP
+.B config
+The list configuration file.
+Contents are described below.
+.TP
+.B subscribers
+Subscriber database.
+Each line contains a subscriber group, with the first five space 
+delimited fields being group identifier, status, timestamp for when
+the group was created, timestamp for the bounce that made it switch
+from status 'ok' to 'bounced', and the bounce identifier.
+.TP
+.B archive\-box
+Archived messages.
+.TP
+.B bounce\-box
+Bounce messages groups not in state 'ok'.
+.TP
+.B headers\-to\-add
+These headers are added to the mails sent to the list.
+They are copied to the beginning of the existing headers exactly as they
+are in the file, after list headers ("List\-ID" and such) have been added
+and those mentioned in 
+.B headers\-to\-remove
+have been removed.
+.TP
+.B headers\-to\-remove
+These headers are removed from mails sent to the list.
+.TP
+.B moderation\-box
+Messages waiting for moderator approval.
+.TP
+.B subscription\-box
+Subscription and unsubscription requests waiting to be confirmed by the user.
+.TP
+.B templates
+Directory containing list specific templates (optional). If this
+directory exists, templates are searched from it before going for
+system wide templates. An empty file here means the
+corresponding message is not sent at all. This can, for example, to
+be used to turn off the "please wait for moderator" mails on a per\-list
+basis.
+.TP
+.B plugins
+Directory containing plugins, Python source files that are loaded 
+automatically by EoC upon startup.
+The plugins may change how EoC operates.
+.PP
+The 
+.B config
+file has a 
+.IR keyword = value
+format:
+.PP
+.RS
+.nf
+[list]
+owners = liw@liw.iki.fi
+archived = no
+posting = free
+subscription = free
+mail\-on\-subscription\-changes = yes
+mail\-on\-forced\-unsubscribe = yes
+language = fi
+.fi
+.RE
+.PP
+The keywords 
+.BR archived , 
+.BR posting ,
+and
+.B subscription 
+correspond to the options with the same names.
+Other keywords are:
+.TP
+.B owners
+List of addresses for the owners. Set with the
+.I \-\-owner
+option.
+.TP
+.B moderators
+List of addresses for the moderators. Set with the
+.I \-\-moderator
+option.
+.TP
+.B mail\-on\-subscription\-changes
+Should the owners be mailed when users subscribe or unsubscribe?
+.TP
+.B mail\-on\-forced\-unsubscribe
+Should the owners be mailed when people are removed from the list due to
+excessive bouncing?
+.TP
+.B ignore_bounce
+Bounce messages are ignored on this list. Useful for example if
+list should have static subscriber list.
+.TP
+.B language
+Suffix for templates, to allow support for multiple languages.
+(If 
+.I language
+is set to "fi", then the template named "foo" is first searched as
+"foo.fi".)
+.TP
+.B pristine\-headers
+Do not MIME encode the headers. Set to "yes" to not encode, anything
+else (including empty or unset) means encoding will happen.
+.SH EXAMPLES
+To create a list called 
+.IR moviefans@example.com ,
+owned by
+.IR ding@example.com ,
+use the following command (all on one line):
+.sp 1
+.nf
+.RS
+enemies\-of\-carlotta \-\-name=moviefans@example.com
+\-\-owner=ding@example.com \-\-create
+.RE
+.fi
+.PP
+Note that you need to arrange mail to arrive at the list (and its
+command addresses) by configuring your mail system.
+For Qmail and Postfix, see below.
+.PP
+To see the subscribers on that list:
+.sp 1
+.nf
+.RS
+enemies\-of\-carlotta \-\-name=moviefans@example.com \-\-list
+.RE
+.fi
+.PP
+People wanting to subscribe to the list should mail
+.sp 1
+.nf
+.RS
+moviefans\-subscribe@example.com
+.RE
+.fi
+.SH QMAIL
+With QMail, to arrange for incoming mail to be processed by Enemies of
+Carlotta, you need to create a couple of
+.I .qmail\-extension
+files per list.
+For example, if your username is joe and you wish to run the
+joe\-fans mailing list, you need to create two files,
+.I .qmail\-fans
+and
+.IR .qmail\-fans\-default ,
+containing
+.sp 1
+.RS
+|enemies\-of\-carlotta \-\-incoming
+.RE
+.PP
+If you're running a virtual domain, example.com, and the mails are
+being delivered to via 
+.I /var/qmail/control/virtualdomains
+to
+.IR joe\-exampledotcom ,
+the files would be called
+.I .qmail\-exampledotcom\-fans
+and
+.I .qmail\-exampledotcom\-fans\-default
+and would contain
+.sp 1
+.RS
+|enemies\-of\-carlotta \-\-incoming \-\-skip\-prefix=joe\-exampledotcom\-
+.RE
+.sp 1
+(all on one line, of course, in case the manual page formatter breaks it
+on several lines).
+.SH COURIER-MTA
+For Courier-MTA, the instructions are similar to the Qmail ones above.
+If your user name is joe and you wish to run the joe-fans email list,
+you need to create the two files .courier-fans and .courier-fans-default
+in your home directory with the content
+.sp 1
+.RS
+|enemies-of-carlotta --is-list --name $RECIPIENT || exit 67
+.br
+|enemies-of-carlotta --incoming
+.RE
+.sp 1
+(The former file needs only the second line, but the first line does no
+harm and it is easier to keep track of things when the files have the
+same content.  Note that $RECIPIENT should be included verbatim, it is
+not a metavariable for you to expand.)
+.PP
+If you are running a virtual domain configured so that all mail to the
+domain @example.com is delivered to joe-exampledotcom, you need to
+create the files .courier-exampledotcom-fans and
+.courier-exampledotcom-fans-default containing the two following lines:
+.sp 1
+.RS
+|enemies-of-carlotta --is-list --name $RECIPIENT --skip-prefix=joe-exampledotcom || exit 67
+.br
+|enemies-of-carlotta --incoming --skip-prefix=joe-exampledotcom
+.RE
+.sp 1
+If the virtual domain is for list use only, then it is sufficient to
+create only the file .courier-exampledotcom-default containing the
+latter two lines.
+.SH POSTFIX
+With Postfix, you need to set up a
+.I .forward
+file containing
+.sp 1
+.RS
+"|procmail \-p"
+.RE
+.sp 1
+and then a
+.I .procmailrc
+file containing
+.sp 1
+.RS
+:0
+.br
+* ? enemies\-of\-carlotta \-\-name=$RECIPIENT \-\-is\-list
+.br
+| enemies\-of\-carlotta \-\-incoming
+.RE
+.PP
+To use Enemies of Carlotta with a Postfix virtual domain, you need to
+set up a 
+.IR "virtual regular expression map" ,
+typically called
+.I /etc/postfix/virtual_regexp
+(add 
+.I "virtual_maps = regexp:/etc/postfix/virtual_regexp"
+to your 
+.I /etc/postfix/main.cf
+file to enable it).
+The regexp file needs to do ugly things to preserve the recipient
+address.
+Add the following to the regexp file:
+.sp 1
+.RS
+/^your\.virtual\.domain$/ dummy
+.br
+/^(yourlist|yourlist\-.*)@(your\.virtual\.domain)$/ joe+virtual\-$1
+.RE
+.sp 1
+That's two lines. Use
+.B joe-virtual
+instead, if
+.I recipient_delimiter
+for your Postfix is configured to a minus instead of a plus..
+Then, in your
+.I .procmailrc
+file, add the
+.I "\-\-skip\-prefix=joe\-virtual\-"
+and 
+.I \-\-domain=your.virtual.domain
+options to both calls to 
+.BR enemies\-of\-carlotta .
+.PP
+(Yes, I think these things are much too complicated, too.)
+.SH "MAIL COMMANDS"
+Users and list owners use Enemies of Carlotta via e\-mail using
+command addresses such as
+.BR foo\-subscribe@example.com .
+Here is a list of all command addresses list users and owners can give.
+In all these examples, the name of the mailing list is
+.BR foo@example.com .
+.SS "Mail commands anyone can use"
+These commands are meant for everyone's use.
+They don't require any special priviledges.
+.TP
+.BR foo@example.com
+Send mail to all list subscribers.
+The message may have to be manually approved by the list moderators first,
+and they have the power to reject a message.
+.TP
+.BR foo\-owner@example.com
+Send mail to the list owner or owners instead.
+.TP
+.BR foo\-help@example.com
+Sending mail to this address makes the list manager reply with
+the help message for the list.
+.TP
+.BR foo\-subscribe@example.com
+Send mail to this address to subscribe to a list.
+The list manager will respond with a confirmation request.
+You won't be subscribed unless you reply to the confirmation request.
+This way, malicious people can't put your address on a mailing list,
+or many mailing lists.
+.TP
+.BR foo\-subscribe\-joe=example.com@example.com
+This is a second form of the subscription address.
+If you want to subscribe to the list with another address than the
+one you're sending mail from, use this one.
+In this case, the address to be subscribed is joe@example.com.
+Note that the confirmation request is sent to Joe, since it is
+his address that is to be added to the list.
+.TP
+.BR foo\-unsubscribe@example.com
+To unsubscribe from a list, send mail to this address from the address
+that is subscribed to the list.
+Again, you will receive a confirmation request, to prevent malicious
+people from unsubscribing you against your will.
+.TP
+.BR foo\-unsubscribe\-joe=example.com@example.com
+To unsubscribe Joe, use this address.
+Again, it is Joe who gets to confirm.
+.SS "Mail commands for the list owners"
+These are commands that list owners can use to administer their list.
+.TP
+.BR foo\-subscribe\-joe=example.com@example.com
+If a list owner sends mail like this, it is they who get the confirmation
+request, not Joe.
+It is generally better for people to subscribe themselves, but sometimes
+list owners want to do it, when they have permission from the person
+and feel helpful.
+.TP
+.BR foo\-unsubscribe\-joe=example.com@example.com
+List owners can also unsubscribe other people.
+.TP
+.BR foo\-list@example.com
+To see who are on the list, this is the address to use.
+It only works if the sender address is one of the list owners.
+The sender address is the one used on the SMTP level,
+not the one in the From: header.
+.TP
+.BR foo\-setlist@example.com
+This lets a list owner set the whole subscriber list at once.
+This is similar to using lots and lots and lots of \-subscribe and
+\-unsubscribe commands, only less painful.
+Everyone who is added to the list gets a welcome message, and
+everyone who is removed from the list gets a goodbye message.
+.TP
+.BR foo\-setlistsilently@example.com
+This is similar to \-setlist, but no welcome and goodbye messages are sent.
+.SH PLUGINS
+Enemies of Carlotta supports plugins.
+If you don't know what Python programming is, you may want to skip this
+section.
+.PP
+A plugin is a Python module (file named with a 
+.B .py
+suffix), placed in the
+.B ~/.enemies\-of\-carlotta/plugins
+directory.
+The plugins are loaded automatically upon startup, if their declared
+interface version matches the one implemented by Enemies of Carlotta.
+The interface version is declared by the module global variable
+.BR PLUGIN_INTERFACE_VERSION .
+.PP
+Plugins can define hook functions that are called by appropriate places in
+the EoC code.
+At the moment, the only hook function is 
+.BR send_mail_to_subscribers_hook ,
+which can manipulate a mail message before it is sent to the subscribers.
+The function must look like this:
+.PP
+.ti +5
+def send_mail_to_subscribers_hook(list, text):
+.PP
+The
+.I list
+argument is a reference to the
+.I MailingList
+object that corresponds to the list in question, and 
+.I text
+is the complete text of the mail message as it exists.
+The function must return the new contents of the mail message.
+.SH FILES
+.TP
+.I ~/.enemies\-of\-carlotta
+All files related to your mailing lists.
+.TP
+.I ~/.enemies\-of\-carlotta/secret
+Secret password used to generate signed addresses for bounce checking
+and subscription verification.
+.TP
+.I ~/.enemies\-of\-carlotta/foo@example.com
+Directory containing data pertaining to the foo@example.com list.
+Except for the 
+.I config
+file in this directory, you shouldn't edit anything by hand.
+.TP
+.I ~/.enemies\-of\-carlotta/foo@example.com/config
+Configuration file for the mailing list.
+You may need to edit this file by hand if you wish to change moderation
+status or list owners.
+.SH "SEE ALSO"
+You may want to visit the 
+.I "Enemies of Carlotta"
+home page at
+.IR http://www.iki.fi/liw/eoc/ .

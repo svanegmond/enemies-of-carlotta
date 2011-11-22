@@ -1,0 +1,37 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Please moderate message to %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=us-ascii
+
+Hello, 
+
+This mail has been sent by the mailing list manager operating the 
+
+    %(list)s
+
+mailing list to the human moderators of the list.
+
+Should the message at the bottom be allowed to be sent to the list?
+If so, reply to this mail or send mail to
+
+    %(confirm)s
+
+If not, send mail to
+
+    %(deny)s
+
+Thanks.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+
+%(origmail)s--%(boundary)s--
+

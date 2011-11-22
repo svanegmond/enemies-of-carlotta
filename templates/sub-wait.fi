@@ -1,0 +1,17 @@
+From: %(From)s
+To: %(To)s
+Subject: Odota omistajan vahvistusta: %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Tämän viestin on lähettänyt postituslistaa %(list)s
+operoiva ohjelmisto.
+
+Olet vahvistanut, että haluat tilata listan. Listan tilaus on rajoitettua
+ja listan omistajien tarvitsee vielä käsitellä tilauspyyntösi käsin.
+
+Postituslistaohjelmiston käyttöohjeet saa pyytämällä osoitteesta
+%(local)s-help@%(domain)s .
+
+Listan omistajat saat kiinni osoitteesta
+%(local)s-owner@%(domain)s .

@@ -1,0 +1,22 @@
+From: %(From)s
+To: %(To)s
+Subject: Please wait for moderation to %(list)s
+Content-type: text/plain; charset=us-ascii
+MIME-Version: 1.0
+
+Hello, 
+
+This mail has been sent by the mailing list manager operating the
+%(list)s mailing list.
+
+You have confirmed that you want to subscribe to the list. List
+subscription is moderated, however, and the list owner needs to manually
+process your request. This might take a while. Please be patient.
+
+For instructions on using the mailing list manager software, send
+mail to %(local)s-help@%(domain)s .
+
+If you have problems, please contact the human owners of the list
+at %(local)s-owner@%(domain)s .
+
+Thank you.

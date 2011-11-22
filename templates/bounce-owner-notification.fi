@@ -1,0 +1,30 @@
+From: %(From)s
+To: %(To)s
+Subject: Osoite poistettu listalta %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Tämän meilin on lähettänyt postituslistaohjelmisto, joka hoitaa
+listaa
+
+    %(list)s
+
+listan omistajille. Osoite 
+
+    %(address)s
+
+on poistettu listalta toimimattomuuden takia. Virheilmoitus on tämän
+viestin liitteenä. Tämä meili on vain tiedoksi, jos mitään erityisen
+omituista ei ole tapahtumassa.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=bounce.txt
+ 
+%(bounce)s--%(boundary)s--
+

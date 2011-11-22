@@ -1,0 +1,22 @@
+From: %(From)s
+To: %(To)s
+Subject: E-Mail an Sie konnte nicht zugestellt werden; Sie sind nicht mehr auf der Liste %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Hallo, 
+
+Sie waren Mitglied der Liste %(list)s.
+
+Leider konnte E-Mail der Liste an Sie wiederholt nicht zugestellt werden
+(z.B. weil Ihr Postfach voll war), so dass Sie jetzt von der Liste entfernt
+wurden. Sobald das Problem behoben ist können Sie die Liste gerne wieder
+abonnieren.
+
+Um eine Anleitung zur Benutzung der Listen-Software zu erhalten,
+senden Sie bitte eine E-Mail an %(local)s-help@%(domain)s.
+
+Falls Sie Hilfe benötigen, können Sie auch an den Verwalter
+der Liste unter %(local)s-owner@%(domain)s schreiben.
+
+Vielen Dank.

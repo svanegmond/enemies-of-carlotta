@@ -1,0 +1,39 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Veuillez modérer le message pour %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Bonjour,
+
+Ce courriel a été envoyé par le gestionnaire de la liste de diffusion
+
+    %(list)s
+
+aux personnes qui sont responsables de la liste.
+    
+
+Le message qui ce trouve à la fin doit-il être envoyé à la liste 
+de diffusion ? 
+Si oui, répondez à ce message ou envoyez un courriel à 
+
+    %(confirm)s
+
+Si non, envoyez un courriel à 
+
+    %(deny)s
+
+Merci.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+
+%(origmail)s--%(boundary)s--
+

@@ -1,0 +1,187 @@
+NEWS file for Enemies of Carlotta, a mailing list manager
+
+Significant user-visible changes from version 1.2.5 to version 1.2.6:
+
+    * When listname-setlistsilently@example.org is mailed from an address
+      which isn't the admin, EoC died. Now fixed. Bug found and patched by
+      Dominic Hargreaves.
+
+Significant user-visible changes from version 1.2.4 to version 1.2.5:
+
+    * The change in 1.2.3 used the wrong log printing function, this
+      release uses the right one.
+
+Significant user-visible changes from version 1.2.3 to version 1.2.4:
+
+    * A fix to CVE-2006-5875, a security problem where EoC did not quote
+      shell command line arguments properly. Thanks to Antti-Juhani
+      Kaijanaho for finding the problem.
+
+Significant user-visible changes from version 1.2.2 to version 1.2.3:
+
+    * When there is a problem with MIME header encodings, don't kill EoC,
+      just print a warning.
+
+Significant user-visible changes from version 1.2.1 to version 1.2.2:
+
+    * Manual page: documents the values to the --posting option, and has
+      instructions for Courier-MTA users.
+    
+    * When someone is told to wait for moderation, the message now contains
+      a few words of explanation that it might have happened due to spam.
+      
+    * A German translation courtesy of Johannes Berg.
+    
+    * Fixes to mail template headers (missing MIME-Type added, typos in
+      Content-Type headers).
+      
+    * Bug fixes to avoid problems when mail headers are wrong (and encoding
+      them correctly fails), or when mail headers contain colons, or when
+      there's problems sending mail. Also, List-* headers are removed from
+      incoming e-mails.
+      
+    * CRLF line endings in incoming messages are converted to LF.
+
+Significant user-visible changes from version 1.2 to version 1.2.1:
+
+    * Bugfix: Checking for base64 encodings now works.
+
+Significant user-visible changes from version 1.1.5 to version 1.2:
+
+    * When the list manager sends a mail with an attached message (e.g.,
+      a bounce), they are marked as "Content-disposition: inline" so that
+      they are shown by default (by sensible mail user agents).
+      
+    * A footer is not appended to messages that are base64 encoded.
+    
+    * Updated translations for templates and manual pages.
+
+Significant user-visible changes from version 1.1.4 to version 1.1.5:
+
+    * Debug logs no longer go to stderr, just to the log file. This should
+      prevent sudden deaths from MTA buffers becoming full.
+      
+    * Bugs about treating addresses in case-insensitive manners fixed.
+    
+    * Lists can now be configured to ignore bounces. (By Jaakko Niemi.)
+    
+    * Moderators for posting can be separate from list owners. (By Pascal
+      Hakim.)
+      
+    * Header MIME encoding can be disabled per list.
+
+Significant user-visible changes from version 1.1.3 to version 1.1.4:
+
+    * Fixed race condition when multiple moderators approve or reject the
+      same message at the same time. This could result in the message being
+      sent multiple times.
+
+Significant user-visible changes from version 1.1.2 to version 1.1.3:
+
+    * Mails sent by EoC now get their headers MIME encoded (if the version
+      of Python in use has the email.Header module).
+
+    * A bunch of new command line options: --get, --set, --language,
+      --mail-on-forced-unsubscribe, --mail-on-subscription-changes,
+      --version
+      
+    * Making an empty template file prevents the corresponding mail from
+      being sent at all. This can be used, for example, to prevent
+      "please wait for moderation" mails.
+      
+    * The beginnings of a plugin architecture, where plugins can modify
+      EoC's operation or the mails it sends. There is only one supported
+      hook at the moment, though, but more will be added as needed.
+      
+    * --show-lists now shows lists in alphabetical order.
+
+Significant user-visible changes from version 1.1.1 to version 1.1.2:
+
+    * This is still a DEVELOPMENT release. There have been many changes
+      and the documentation and translations are probably out of date.
+      There may be bugs lurking as well.
+      
+    * Headers of messages sent to the list can be manipulated in simple
+      ways: some headers can be removed and others added.
+      
+    * Error messages are now user-friendlier than Python's stack traces.
+    
+    * When EoC attaches a message to something it sends to a user, it
+      does so by making it a proper MIME attachment.
+      
+    * Message templates are now in UTF-8.
+    
+    * Manual page in Spanish.
+
+Significant user-visible changes from version 1.1.0 to version 1.1.1:
+
+    * This is still a DEVELOPMENT release. There have been many changes
+      and the documentation and translations are probably out of date.
+      There may be bugs lurking as well.
+      
+    * Manual page mentions the "templates" sub-directory of the list specific
+      directory.
+      
+    * QMQP implementation is now installed by "make install".
+    
+    * Bashism in the Makefile have been removed.
+    
+    * Bugs regarding lists with names that are not all lower case have
+      been fixed.
+
+    * This release is dedicated to Jaakko Niemi who found most bugs in 1.1.0.
+
+Significant user-visible changes from version 1.0.3 to version 1.1.0:
+
+    * This is a DEVELOPMENT release. There have been many changes and the
+      documentation and translations are probably out of date. There may be
+      bugs lurking as well.
+      
+    * QMQP support from Jaakko Niemi.
+    
+    * Command line syntax errors result in an error message rather than 
+      a stack trace.
+
+    * Upper and lower case are no longer treated as being different characters
+      in e-mail addresses.
+      
+    * New options --sender and --recipient.
+    
+    * Subscription and posting moderation requests now use the rejection
+      address to make life easier for mutt users.
+      
+    * Swedish translation.
+    
+    * Mails sent by EoC now have a "real name" in the From header, to lessen
+      the chance they are caught by spam filters.
+
+Significant changes from version 1.0.2 to version 1.0.3:
+
+    * Added option --post, to bypass moderation.
+    
+    * The manual page now documents all mail command addresses.
+    
+    * Bug fix: Qmail section in the manual page had extra quotation marks.
+    They have been removed.
+    
+    * Bug fix: Log file didn't get more than the first message of each
+    run. Now fixed so that it gets all messages. (Stderr got everything
+    even before, though.)
+
+Significant changes from version 1.0.1 to version 1.0.2:
+
+    * Manual page fix: the example for creating a new list now actually
+    works.
+    
+    * Added option --show-lists, to list all lists.
+
+Significant changes from version 1.0 to version 1.0.1:
+
+    * Bug fixes only.
+    
+    * --help option implemented.
+    
+    * --create: If ~/.enemies-of-carlotta exists, but a file named
+    "secret" inside it doesn't, create the file instead of crashing.
+    
+    * Bounce handling fixed.

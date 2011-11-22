@@ -1,0 +1,37 @@
+From: %(From)s
+To: %(To)s
+Subject: Your mail is bouncing, %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=us-ascii
+
+Hello, 
+
+You are subscribed to the %(list)s mailig list.
+
+Mail sent to you by the mailing list software has bounced at least once
+in the past week or so. If this was a temporary error, you can ignore
+this warning. However, if your mail continues to bounce, you will
+eventually be automatically unsubscribed from the list. Sorry about
+the inconvenience.
+
+The first bounce message is attached.
+
+For instructions on using the mailing list manager software, send
+mail to %(local)s-help@%(domain)s .
+
+If you have problems, please contact the human owners of the list
+at %(local)s-owner@%(domain)s .
+
+Thank you.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=bounce.txt
+
+%(bounce)s--%(boundary)s--
+

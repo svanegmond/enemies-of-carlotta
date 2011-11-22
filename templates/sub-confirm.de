@@ -1,0 +1,47 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Bitte bestaetigen Sie Ihr Abonnement der Liste %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=utf-8
+
+Hallo, 
+
+Diese E-Mail wurde von der Listen-Software der Liste
+$(list)s versendet.
+
+Sie haben (oder jemand anderes hat für Sie) darum gebeten dass
+Sie die Liste %(list)s abonnieren. Die Anfrage ist an diese E-Mail
+angehängt. Falls Sie sie nicht selber versendet haben wenden Sie
+sich an den Absender oder dessen Systemadministrator.
+
+Falls Sie auf diese E-Mail antworten bestätigen Sie dass Sie die
+Liste abonnieren möchsten. Der Inhalt der Antwort ist unerheblich.
+Alternativ können Sie auch einfach eine E-Mail an die Adresse
+
+    %(confirm)s
+
+senden.
+
+Falls Sie die Liste nicht abonnieren möchten ignorieren
+Sie bitte diese E-Mail.
+
+Um eine Anleitung zur Benutzung der Listen-Software zu erhalten,
+senden Sie bitte eine E-Mail an %(local)s-help@%(domain)s.
+
+Falls Sie Hilfe benötigen, können Sie auch an den Verwalter
+der Liste unter %(local)s-owner@%(domain)s schreiben.
+
+Vielen Dank.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+
+%(origmail)s--%(boundary)s--
+

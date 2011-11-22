@@ -1,0 +1,21 @@
+From: %(From)s
+To: %(To)s
+Subject: Die Abonnentenliste von %(list)s wurde ersetzt
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Hallo, 
+
+Diese E-Mail wurde von der Listen-Software der Liste
+$(list)s versendet.
+
+Zu Ihrer Information: Auf Bitte des Listenverwalters wurde die
+Abonnentenliste dieser Liste durch eine neue ersetzt.
+
+Um eine Anleitung zur Benutzung der Listen-Software zu erhalten,
+senden Sie bitte eine E-Mail an %(local)s-help@%(domain)s.
+
+Falls Sie Hilfe benötigen, können Sie auch an den Verwalter
+der Liste unter %(local)s-owner@%(domain)s schreiben.
+
+Vielen Dank.

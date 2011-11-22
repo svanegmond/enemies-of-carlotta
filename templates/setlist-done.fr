@@ -1,0 +1,23 @@
+From: %(From)s
+To: %(To)s
+Subject: La liste des abonnés de la liste %(list)s a changé
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Bonjour,
+
+Ce courriel a été envoyé par le gestionnaire de la liste de diffusion
+%(list)s .
+
+Pour votre information : à la demande d'un des propriétaires de la 
+liste, la liste des abonnés pour la liste a été remplacée par une 
+nouvelle.
+
+Pour obtenir des informations sur l'utilisation du logiciel de gestion de
+la liste de diffusion, envoyez un courriel à %(local)s-help@%(domain)s .
+
+Si vous rencontrez des problèmes, veuillez prendre contact avec la
+personne responsable de la liste de diffusion à l'adresse :
+%(local)s-owner@%(domain)s .
+
+Merci.

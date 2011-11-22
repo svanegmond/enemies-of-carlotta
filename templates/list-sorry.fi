@@ -1,0 +1,7 @@
+From: %(From)s
+To: %(To)s
+Subject: Et saa tilaajaluetteloa listalle %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Valitan, et ole listan %(list)s omistaja.

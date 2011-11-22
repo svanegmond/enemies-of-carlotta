@@ -1,0 +1,24 @@
+From: %(From)s
+To: %(To)s
+Subject: Neuer Abonnent der Liste %(list)s
+Content-type: text/plain; charset=utf-8
+MIME-Version: 1.0
+
+Hallo, 
+
+Diese E-Mail wurde von der Listen-Software der Liste
+
+    %(list)s
+
+an die Verwalter der Liste gesendet.
+
+Die folgende Adresse wurde auf die Abonnentenliste
+hinzugefügt:
+
+    %(address)s
+
+Falls keine Besonderheiten vorliegen dient diese E-Mail
+nur Ihrer Information und Sie brauchen nichts weiter zu
+unternehmen.
+
+Vielen Dank.

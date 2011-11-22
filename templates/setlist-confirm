@@ -1,0 +1,40 @@
+From: %(From)s
+To: %(To)s
+Reply-To: %(confirm)s
+Subject: Please moderate subscriber list for %(list)s
+Content-type: multipart/mixed; boundary="%(boundary)s"
+MIME-Version: 1.0
+
+This is a multipart message in MIME format
+
+--%(boundary)s
+Content-type: text/plain; charset=us-ascii
+
+Hello, 
+
+This mail has been sent by the mailing list manager operating the
+%(list)s mailing list.
+
+One of the owners of the list (or someone pretending to be one) has asked
+for the subscriber list for the list to be changed.  The request mail,
+with the new set of describers, is attached.  If you accept the
+change, please respond to this mail. Otherwise please just ignore it.
+
+Note that the whole subscriber list will be changed to the list of
+addresses below. All old subscriptions will be forgotten, unless they
+are also on the new list of subscribers.
+
+For instructions on using the mailing list manager software, send
+mail to %(local)s-help@%(domain)s .
+
+If you have problems, please contact the human owners of the list
+at %(local)s-owner@%(domain)s .
+
+Thank you.
+
+--%(boundary)s
+Content-type: message/rfc822
+Content-disposition: inline; filename=original.txt
+
+%(origmail)s--%(boundary)s--
+
